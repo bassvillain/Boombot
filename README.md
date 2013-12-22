@@ -1,4 +1,4 @@
-plugbotboomboxlord
+BoomBot
 ==================
 
-neon is the lord
+BASSVILLAIN IS AWESOME AS F**K <3 
