@@ -1570,4 +1570,4 @@ botMethods.djAdvanceEvent = function(data){
         });
     }, 3000);
  
-    API.sendChat("boombot version "+mubBot.misc.version+" Now online!")
+    API.sendChat("A bot with the version "+mubBot.misc.version+" has arrived the Boombox!")
