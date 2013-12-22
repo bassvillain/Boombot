@@ -516,7 +516,16 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat("@"+ data.from +" just gave a huge slap to @"+ API.getDJ().username +" for playing this awful track!");
                         }
                         break;
-
+                        
+                      case "theme":
+                    case "themes":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Hey @"+ data.from +"! Hey normally we do sample sessions or chill/hardcore, if you have any suggestions to a cool session please do it here: www.facebook.com/groups/plugboombox/ ~ Keep in Touch!");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
                     case "whymeh":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Reserve Mehs for songs that are a) extremely overplayed b) off genre c) absolutely god awful or d) troll songs. ");
