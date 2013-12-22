@@ -510,11 +510,11 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                          case "puff":
+                    case "puff":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomCookie = Math.floor(Math.random() * mubBot.misc.cookie.length);
+                            var randomCookie = Math.floor(Math.random() * mubBot.misc.puff.length);
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
