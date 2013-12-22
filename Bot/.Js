@@ -510,25 +510,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "puff":
-                        if(typeof command[1] == "@"){
-                            var crowd = API.getUsers();
-                            var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomSentence = Math.floor(Math.random() * 3);
-                            switch(randomSentence){
-                                case 0:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has just puffed 2 times and passed it to you. Enjoy!");
-                                    break;
-                                case 1:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has just started coughing because of the blunt so he passed it to you. Enjoy!");
-                                    break;
-                                case 2:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " thinks you should try this badass weed so he just passed it to you. Enjoy!");
-                                    break;
-                                case 3:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has passed you the biggest blunt he has ever rolled. Enjoy!");
-                                    break;
-                        
                     case "bitchslap":
                     case "slap":
                         if(typeof command[1] == "undefined"){
