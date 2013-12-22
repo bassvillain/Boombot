@@ -513,9 +513,55 @@ botMethods.djAdvanceEvent = function(data){
                     case "bitchslap":
                     case "slap":
                         if(typeof command[1] == "undefined"){
-                        API.sendChat("@"+ data.from +" just gave a huge slap to @"+ API.getDJ().username +" for being a such a fag!");
+                        API.sendChat("@"+ data.from +" just gave a huge slap to @"+ API.getDJ().username +" for playing this awful track!");
                         }
                         break;
+                        
+                         case "bitchslap":
+                        if(typeof command[1] == "@"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomCookie = Math.floor(Math.random() * mubBot.misc.cookie.length);
+                            var randomSentence = Math.floor(Math.random() * 3);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+ data.from +" just gave a huge bitchslap to @"+ API.getDJ().username +" for being such a fag!");
+                                    break;
+                                case 1:
+                                    API.sendChat("@"+ data.from +" just slapped @"+ API.getDJ().username +" while he was attempting to be a man!");
+                                    break;
+                                case 2:
+                                    API.sendChat("@"+ data.from +" just slapped the shit out of @"+ API.getDJ().username +" for not knowing his place in the boombox!");
+                                    break;
+                                case 3:
+                                    API.sendChat("@"+ data.from +" just bitchslapped @"+ API.getDJ().username +" for farting in the Boombox!");
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomCookie = Math.floor(Math.random() * mubBot.misc.cookie.length);
+                            var randomSentence = Math.floor(Math.random() * 3);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + mubBot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    break;
+                                case 1:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + mubBot.misc.cookie[randomCookie] + ". Enjoy!");
+                                    break;
+                                case 2:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + mubBot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    break;
+                                case 3:
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + mubBot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    break;
+                            }
+                        }
+                        if(mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+ 
  
                     case "whymeh":
                         if(typeof command[1] == "undefined"){
