@@ -433,7 +433,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "chillsunday":
                     case "cs":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("Hey @"+ data.from +"! We're doing a themed day, its chill sunday! Go pick your favorite chill out tracks and Have fun!");
+                            API.sendChat("We're doing a themed day, its chill sunday! Go pick your favorite chill out tracks and Have fun!");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
