@@ -424,7 +424,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "fb":
                     case "facebook":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("Hey @"+ data.from +"! I bet you're cute or handsome join our facebook group here: http://goo.gl/lwUn15");
+                            API.sendChat("Hey @"+ data.from +"! I bet you're cute or handsome join our facebook group here: www.facebook.com/groups/plugboombox/ so we can all keep in touch!");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
