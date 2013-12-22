@@ -504,7 +504,7 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "props":
                     case "bonus":
-                    case "bigup"
+                    case "bigup":
                         if(typeof command[1] == "undefined"){
                         API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
                         }
