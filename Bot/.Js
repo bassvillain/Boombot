@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2012-2013 by Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL
+ Copyright (c) 2013-2014 by Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL
  
  Permission to use this software for any purpose without fee is hereby granted, provided
  that the above copyright notice and this permission notice appear in all copies.
@@ -420,6 +420,15 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                         
+                    case "fb":
+                    case "facebook":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Hey @"+ data.from +"! I bet you're cute or handsome join our facebook group here: http://goo.gl/lwUn15");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
  
                     case "ping":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
@@ -469,7 +478,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat(".{command} mention is included");
                             setTimeout(function(){
-                            API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| rog | jovi | banjo | redneck | fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
+                            API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
                         }, 650);
                             setTimeout(function(){
                             API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
