@@ -31,7 +31,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMAN
  * WAS WRITTEN BY IT'S RIGHTFUL OWNER: DJ NOEN)
  *
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
- * @Member:    MV1 - MV1 (Owner. of HipHop TT)
+ * @Member:    Ricardo Soares - bassvillain (Owner. of TheBoomBox)
  *
  */
  
@@ -49,8 +49,8 @@ toSave = {};
 toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
  
-mubBot.misc.version = "2.0.77";
-mubBot.misc.origin = "This bot was created by MV1 and Neon alone, and it is copyrighted!";
+mubBot.misc.version = "1.0.1";
+mubBot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 mubBot.misc.changelog = "Added a secondary check for history";
 mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
@@ -79,7 +79,7 @@ mubBot.settings.interactive = true;
 mubBot.settings.ruleSkip = true;
 mubBot.settings.removedFilter = true;
  
-//Admins                [Dj-Neon-TFL]                   [bassvillain]
+//Admins                [Dj-Neon-TFL]               [bassvillain]
 mubBot.admins = ["50aeaeb6c3b97a2cb4c25bd2","50aeaeb8d6e4a94f77470a11"];
  
 mubBot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","cracker","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
