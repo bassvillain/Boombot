@@ -15,16 +15,16 @@
    from a version used in the original software
  
  
-TERMS OF REPRODUCTION USE
+ TERMS OF REPRODUCTION USE
  
-Failure to follow these terms will result in me getting very angry at you
-and having your software tweaked or removed if possible. Either way, you're
-still an idiot for not following such a basic rule.
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHORS DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE
-INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHORS
-BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
-RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ Failure to follow these terms will result in me getting very angry at you
+ and having your software tweaked or removed if possible. Either way, you're
+ still an idiot for not following such a basic rule.
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHORS DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE
+ INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHORS
+ BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+ RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
  
  * NOTE:  PLEASE CONTACT DJ-NEON FOR THIS SCRIPT (DO NOT CHANGE ANYTHING ON THIS SCRIPT OR USE THIS SCRIPT WHICH
@@ -174,36 +174,36 @@ mubBot.misc.catfact = ["Cats have five toes on each front paw, but only four toe
 "Cat families usually play best in even numbers. Cats and kittens should be acquired in pairs whenever possible."];
  
 mubBot.misc.dogfact = [
-        "Three dogs (from First Class cabins!) survived the sinking of the Titanic – two Pomeranians and one Pekingese.",
-        "It’s rumored that, at the end of the Beatles song, A Day in the Life, Paul McCartney recorded an ultrasonic whistle, audible only to dogs, just for his Shetland sheepdog.",
-        "Puppies have 28 teeth and normal adult dogs have 42.",
-        "Dogs chase their tails for a variety of reasons: curiosity, exercise, anxiety, predatory instinct or, they might have fleas! If your dog is chasing his tail excessively, talk with your vet.",
-        "Dalmatian puppies are pure white when they are born and develop their spots as they grow older.",
-        "Dogs and humans have the same type of slow wave sleep (SWS) and rapid eye movement (REM) and during this REM stage dogs can dream. The twitching and paw movements that occur during their sleep are signs that your pet is dreaming",
-        "Dogs’ eyes contain a special membrane, called the tapetum lucidum, which allows them to see in the dark.",
-        "A large breed dog’s resting heart beats between 60 and 100 times per minute, and a small dog breed’s heart beats between 100-140. Comparatively, a resting human heart beats 60-100 times per minute.",
-        "According to a petfinder.com - Press poll, 72% of dog owners believe their dog can detect when stormy weather is on the way.",
-        "A dog’s normal temperature is between 101 and 102.5 degrees Fahrenheit.",
-        "Unlike humans who sweat everywhere, dogs only sweat through the pads of their feet.",
-        "Dogs have three eyelids, an upper lid, a lower lid and the third lid, called a nictitating membrane or “haw,” which helps keep the eye moist and protected.",
-        "Americans love dogs! 62% of U.S. households own a pet, which equates to 72.9 million homes",
-        "45% of dogs sleep in their owner’s bed (we’re pretty sure a large percentage also hogs the blankets!)",
-        "Why are dogs’ noses so wet? Dogs’ noses secrete a thin layer of mucous that helps them absorb scent. They then lick their noses to sample the scent through their mouth.",
-        "Dogs have about 1,700 taste buds. Humans have approximately 9,000 and cats have around 473.",
-        "A Dog’s sense of smell is 10,000 – 100,000 times more acute as that of humans.",
-        "It’s a myth that dogs only see in black and white. In fact, it’s believed that dogs see primarily in blue, greenish-yellow, yellow and various shades of gray.",
-        "Sound frequency is measured in Hertz (Hz). The higher the Hertz, the higher-pitched the sound. Dogs hear best at 8,000 Hz, while humans hear best at around 2,000 Hz.",
-        "Dogs’ ears are extremely expressive. It’s no wonder! There are more than a dozen separate muscles that control a dog’s ear movements.",
-        "While the Chow Chow dogs are well known for their distinctive blue-black tongues, they’re actually born with pink tongues. They turn blue-black at 8-10 weeks of age.",
-        "When dogs kick after going to the bathroom, they are using the scent glands on their paws to further mark their territory.",
-        "Dogs curl up in a ball when they sleep due to an age-old instinct to keep themselves warm and protect their abdomen and vital organs from predators.",
-        "Dogs are capable of understanding up to 250 words and gestures, can count up to five and can perform simple mathematical calculations. The average dog is as intelligent as a two-year-old child.",
-        "Some stray Russian dogs have figured out how to use the subway system in order to travel to more populated areas in search of food.",
-        "Dogs don’t enjoy being hugged as much as humans and other primates.",
-        "Two stray dogs in Afghanistan saved 50 American soliders. A Facebook group raised $21,000 to bring the dogs back to the US and reunite them with the soldiers.",
-        "Service dogs are trained to know when they are on duty. When their harness is on, they know it’s business time. When you take it off, the pups immediately become playful and energetic.",
-        "Tiger Woods stuttered as a child and used to talk to his dog until he fell asleep in an effort to get rid of it.",
-        "Seeing eye dogs pee and poo on command so that their owners can clean up after them."];
+"Three dogs (from First Class cabins!) survived the sinking of the Titanic – two Pomeranians and one Pekingese.",
+"It’s rumored that, at the end of the Beatles song, A Day in the Life, Paul McCartney recorded an ultrasonic whistle, audible only to dogs, just for his Shetland sheepdog.",
+"Puppies have 28 teeth and normal adult dogs have 42.",
+"Dogs chase their tails for a variety of reasons: curiosity, exercise, anxiety, predatory instinct or, they might have fleas! If your dog is chasing his tail excessively, talk with your vet.",
+"Dalmatian puppies are pure white when they are born and develop their spots as they grow older.",
+"Dogs and humans have the same type of slow wave sleep (SWS) and rapid eye movement (REM) and during this REM stage dogs can dream. The twitching and paw movements that occur during their sleep are signs that your pet is dreaming",
+"Dogs’ eyes contain a special membrane, called the tapetum lucidum, which allows them to see in the dark.",
+"A large breed dog’s resting heart beats between 60 and 100 times per minute, and a small dog breed’s heart beats between 100-140. Comparatively, a resting human heart beats 60-100 times per minute.",
+"According to a petfinder.com - Press poll, 72% of dog owners believe their dog can detect when stormy weather is on the way.",
+"A dog’s normal temperature is between 101 and 102.5 degrees Fahrenheit.",
+"Unlike humans who sweat everywhere, dogs only sweat through the pads of their feet.",
+"Dogs have three eyelids, an upper lid, a lower lid and the third lid, called a nictitating membrane or “haw,” which helps keep the eye moist and protected.",
+"Americans love dogs! 62% of U.S. households own a pet, which equates to 72.9 million homes",
+"45% of dogs sleep in their owner’s bed (we’re pretty sure a large percentage also hogs the blankets!)",
+"Why are dogs’ noses so wet? Dogs’ noses secrete a thin layer of mucous that helps them absorb scent. They then lick their noses to sample the scent through their mouth.",
+"Dogs have about 1,700 taste buds. Humans have approximately 9,000 and cats have around 473.",
+"A Dog’s sense of smell is 10,000 – 100,000 times more acute as that of humans.",
+"It’s a myth that dogs only see in black and white. In fact, it’s believed that dogs see primarily in blue, greenish-yellow, yellow and various shades of gray.",
+"Sound frequency is measured in Hertz (Hz). The higher the Hertz, the higher-pitched the sound. Dogs hear best at 8,000 Hz, while humans hear best at around 2,000 Hz.",
+"Dogs’ ears are extremely expressive. It’s no wonder! There are more than a dozen separate muscles that control a dog’s ear movements.",
+"While the Chow Chow dogs are well known for their distinctive blue-black tongues, they’re actually born with pink tongues. They turn blue-black at 8-10 weeks of age.",
+"When dogs kick after going to the bathroom, they are using the scent glands on their paws to further mark their territory.",
+"Dogs curl up in a ball when they sleep due to an age-old instinct to keep themselves warm and protect their abdomen and vital organs from predators.",
+"Dogs are capable of understanding up to 250 words and gestures, can count up to five and can perform simple mathematical calculations. The average dog is as intelligent as a two-year-old child.",
+"Some stray Russian dogs have figured out how to use the subway system in order to travel to more populated areas in search of food.",
+"Dogs don’t enjoy being hugged as much as humans and other primates.",
+"Two stray dogs in Afghanistan saved 50 American soliders. A Facebook group raised $21,000 to bring the dogs back to the US and reunite them with the soldiers.",
+"Service dogs are trained to know when they are on duty. When their harness is on, they know it’s business time. When you take it off, the pups immediately become playful and energetic.",
+"Tiger Woods stuttered as a child and used to talk to his dog until he fell asleep in an effort to get rid of it.",
+"Seeing eye dogs pee and poo on command so that their owners can clean up after them."];
  
 mubBot.misc.fortune = [
 " There is a true and sincere friendship between you and your friends.",
@@ -487,7 +487,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat(".{command} mention is included");
                             setTimeout(function(){
-                            API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | drink");
+                            API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
                         }, 650);
                             setTimeout(function(){
                             API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -526,7 +526,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                      case "theme":
+                    case "theme":
                     case "themes":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Hey @"+ data.from +"! Hey normally we do sample sessions or chill/hardcore, if you have any suggestions to a cool session please do it here: www.facebook.com/groups/plugboombox/ ~ Keep in Touch!");
@@ -1018,7 +1018,7 @@ botMethods.djAdvanceEvent = function(data){
                         API.sendChat("2) If the song has more MEHs than WOOTs, you should skip it.");
                         break;
                     case '3':
-                        API.sendChat(" 3) No auto-queue when away from keyboard.");
+                        API.sendChat("3) No auto-queue when away from keyboard.");
                         break;
                     default:
                         API.sendChat("You faggot that's an Unknown rule!");
