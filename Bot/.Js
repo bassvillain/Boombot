@@ -515,6 +515,23 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
+                    case "melimel":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Error: Username not found.. Do you mean Matt-c?");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "mattc":
+                    case "matt-c":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Error: Username not found.. Do you mean Melimel?");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
                     case "bitchslap":
                     case "slap":
                         if(typeof command[1] == "undefined"){
