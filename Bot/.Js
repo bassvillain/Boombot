@@ -1297,7 +1297,6 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomBeer = Math.floor(Math.random() * mubBot.misc.beer.length);
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
@@ -1315,7 +1314,6 @@ botMethods.djAdvanceEvent = function(data){
                             }
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
-                            var randomTaco = Math.floor(Math.random() * mubBot.misc.beer.length);
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
@@ -1338,7 +1336,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                        
- 
                       case "weed":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
