@@ -1299,7 +1299,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomTaco = Math.floor(Math.random() * mubBot.misc.beer.length);
+                            var randomBeer = Math.floor(Math.random() * mubBot.misc.beer.length);
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
@@ -1309,7 +1309,7 @@ botMethods.djAdvanceEvent = function(data){
                                     API.sendChat("@" + crowd[randomUser].username + ", quickly! Drink this " + mubBot.misc.beer[randomBeer] + " before I do!");
                                     break;
                                 case 2:
-                                    API.sendChat("One free " + mubBot.misc.beer[randomBeer] + " for you, @" + crowd[randomUser].username + ".");
+                                    API.sendChat("One free " + mubBot.misc.beer[randomBeers] + " for you, @" + crowd[randomUser].username + ".");
                                     break;
                                 case 3:
                                     API.sendChat("/me throws a " + mubBot.misc.beer[randomBeer] + " at @" + crowd[randomUser].username + "!");
