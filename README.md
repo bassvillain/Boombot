@@ -2,10 +2,6 @@ BoomBot
 ==================
 
 ## BASSVILLAIN IS AWESOME AS F**K <3 ^-^
-## ALL HAIL NEON THO 
-
-NO!
-
 ## ALL HAIL BASSVILLAIN <3 
 
 
