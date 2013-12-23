@@ -429,6 +429,16 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                    case "temporaryrules":
+                    case "temporaryrule":
+                    case "tr":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Rap in english only");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
  
                     case "chillsunday":
                     case "cs":
