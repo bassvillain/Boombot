@@ -281,7 +281,7 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("@"+ user.username +" Welcome to the Boombox. Read our rules and have fun!");
+API.sendChat("Welcome, "@"+ user.username +"The Boombox wishes you a Merry Xmas and a Happy New Year!");
 }
  
 API.on(API.DJ_ADVANCE, DJ);
