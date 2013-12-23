@@ -478,20 +478,6 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
- 
-                    case "theme":
-                        if(typeof command[1] == "undefined"){
-                            API.sendChat("We usually do sessions in the boombox, Chill Sunday, Hardcore Sessions and Sample Sessions are the most often used. If you have any suggestions please talk with any manager or host.");
-                        }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" We usually do sessions in the boombox, Chill Sunday, Hardcore Sessions and Sample Sessions are the most often used. If you have any suggestions please talk with any manager or host.");
-                        }else{
-                            API.sendChat("We usually do sessions in the boombox, Chill Sunday, Hardcore Sessions and Sample Sessions are the most often used. If you have any suggestions please talk with any manager or host.");
-                        }
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
                
                     case "commands":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
