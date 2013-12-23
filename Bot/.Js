@@ -529,7 +529,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "theme":
                     case "themes":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("Hey @"+ data.from +"! Hey normally we do sample sessions or chill/hardcore, if you have any suggestions to a cool session please do it here: www.facebook.com/groups/plugboombox/ ~ Keep in Touch!");
+                            API.sendChat("Hey @"+ data.from +"! Normally we do sample sessions or chill/hardcore days, if you have any suggestions to a cool session please suggest it here: www.facebook.com/groups/plugboombox/ ~ Keep in Touch!");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
