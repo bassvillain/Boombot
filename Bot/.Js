@@ -1303,16 +1303,16 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + crowd[randomUser].username + ", take this " + mubBot.misc.beer[randomBeer] + ", to refresh your mind !");
+                                    API.sendChat("@" + crowd[randomUser].username + ", take this cold one, to refresh your mind !");
                                     break;
                                 case 1:
-                                    API.sendChat("@" + crowd[randomUser].username + ", quickly! Drink this " + mubBot.misc.beer[randomBeer] + " before I do!");
+                                    API.sendChat("@" + crowd[randomUser].username + ", quickly! Drink this liquid gold before I do!");
                                     break;
                                 case 2:
-                                    API.sendChat("One free " + mubBot.misc.beer[randomBeers] + " for you, @" + crowd[randomUser].username + ".");
+                                    API.sendChat("One free frozen blonde for you, @" + crowd[randomUser].username + ".");
                                     break;
                                 case 3:
-                                    API.sendChat("/me throws a " + mubBot.misc.beer[randomBeer] + " at @" + crowd[randomUser].username + "!");
+                                    API.sendChat("/me throws a brewski at @" + crowd[randomUser].username + "!");
                                     break;
                             }
                         }else{
