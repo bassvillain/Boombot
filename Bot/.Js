@@ -93,8 +93,6 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 //Fun commands for misc below.
  
 mubBot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
-
-mubBot.misc.beer =  ["a cold one","frozen blonde","beer","brewski","liquid gold"];
  
 mubBot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
  
