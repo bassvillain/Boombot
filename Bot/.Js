@@ -93,6 +93,8 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 //Fun commands for misc below.
  
 mubBot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
+
+mubBot.misc.beer =  ["a cold one","frozen blonde","beer","brewski","liquid gold"];
  
 mubBot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
  
@@ -1292,6 +1294,52 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                        case "beer":
+                        if(typeof command[1] == "@"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomTaco = Math.floor(Math.random() * mubBot.misc.beer.length);
+                            var randomSentence = Math.floor(Math.random() * 3);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + crowd[randomUser].username + ", take this " + mubBot.misc.beer[randomBeer] + ", to refresh your mind !");
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + crowd[randomUser].username + ", quickly! Drink this " + mubBot.misc.beer[randomBeer] + " before I do!");
+                                    break;
+                                case 2:
+                                    API.sendChat("One free " + mubBot.misc.beer[randomBeer] + " for you, @" + crowd[randomUser].username + ".");
+                                    break;
+                                case 3:
+                                    API.sendChat("/me throws a " + mubBot.misc.beer[randomBeer] + " at @" + crowd[randomUser].username + "!");
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomTaco = Math.floor(Math.random() * mubBot.misc.beer.length);
+                            var randomSentence = Math.floor(Math.random() * 3);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@" + botMethods.cleanString(command[1]) + ", take this " + mubBot.misc.beer[randomBeer] + ", to refresh your mind !");
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + botMethods.cleanString(command[1]) + ", quickly! Drink this " + mubBot.misc.beer[randomBeer] + " before I do!");
+                                    break;
+                                case 2:
+                                    API.sendChat("One free " + mubBot.misc.beer[randomBeer] + " for you, @" + crowd[randomUser].username + ".");
+                                    break;
+                                case 3:
+                                    API.sendChat("/me throws a " + mubBot.misc.beer[randomBeer] + " at @" + crowd[randomUser].username + "!");
+                                    break;
+                            }
+                        }
+                        if(mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                       
  
                       case "weed":
                         if(typeof command[1] == "@"){
