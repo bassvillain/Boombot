@@ -485,7 +485,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat(".{command} mention is included");
                             setTimeout(function(){
-                            API.sendChat("rules | themes | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
+                            API.sendChat("rules | themes | help | whywoot | whymeh | wiki | linkin | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
                         }, 650);
                             setTimeout(function(){
                             API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
@@ -607,7 +607,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
  
-                    case "link":
+                    case "linkin":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("@" + data.from + " Put a link starting off from www.");
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
