@@ -97,7 +97,7 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 mubBot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
  
 mubBot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
- 
+
 mubBot.misc.ball = [
 " It is certain",
 " It is decidedly so",
@@ -1298,7 +1298,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                        case "beer":
+                case "beer":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
@@ -1506,50 +1506,8 @@ botMethods.djAdvanceEvent = function(data){
             }
         }
     });
- 
-    API.on(API.CHAT, function(data){
-        var msg = data.message, fromID = data.fromID;
-        command = msg.substring(1).split(' ');
-        if(typeof command[3] != "undefined"){
-            for(var i = 3; i<command.length; i++){
-                command[2] = command[2] + ' ' + command[i];
-            }
-        }
-        if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
-            switch(command[0]){
-                case 'bansong':
-                    if(command[1].length === 13 && command[1].indexOf(':') === 1 && command[1].indexOf(1) === 0){
-                        ruleSkip[command[1]] = {id: command[1], rule: command[2]};
-                        $.getJSON("http://gdata.youtube.com/feeds/api/videos/"+command[1].substring(2)+"?v=2&alt=jsonc&callback=?", function(json){
-                            setTimeout(function(){
-                                if(typeof json.data.title !== 'undefined'){
-                                    API.sendChat(json.data.title+' Is now banned!');
-                                }else{
-                                    API.sendChat('Is now banned!');
-                                }
-                            }, 500)
-                        });
-                    }else if(command[1].length === 10 && command[1].indexOf(':') === 1 && command[1].indexOf(2) === 0){
-                        ruleSkip[command[1]] = {id: command[1], rule: command[2]};
-                        SC.get('/tracks', {ids: command[1].substring(2)}, function(tracks) {
-                            if(typeof tracks[0].title !== 'undefined'){
-                                API.sendChat(tracks[0].title+' Is now banned!');
-                            }else{
-                                API.sendChat('Is now banned!');
-                            }
-                        });
-                    }else if(typeof ruleSkip[API.getMedia().id] === 'undefined'){
-                    ruleSkip[API.getMedia().id] = {id: API.getMedia().id, rule: command[1]};
-                    API.sendChat(API.getMedia().author+ ' - ' +API.getMedia().title+' I am now banning this song!');
-                    API.moderateForceSkip();
-                }
-                    botMethods.save();
-                    break;
-            }
-        }
-    });
- 
-    API.on(API.CHAT, function(data){
+   
+   API.on(API.CHAT, function(data){
         msg = data.message.toLowerCase(), chatID = data.chatID;
  
         for(var i = 0; i < mubBot.filters.swearWords.length; i++){
@@ -1599,33 +1557,17 @@ botMethods.djAdvanceEvent = function(data){
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                 }
             }
+            
         }
  
     });
  
     API.on(API.DJ_ADVANCE, DJ_ADVANCE);
     function DJ_ADVANCE(data){
-        if(mubBot.settings.ruleSkip && typeof ruleSkip[data.media.id] != "undefined"){
-            switch(ruleSkip[data.media.id].rule){
-                case '1':
-                    API.sendChat('@'+data.dj.username+' This song is banned!');
-                    botMethods.skip();
-                    break;
-                case '99':
-                    API.sendChat('@'+data.dj.username+' Just no..');
-                    botMethods.skip();
-                    break;
-                default:
-                    API.sendChat('@'+data.dj.username+' '+ruleSkip[data.media.id].rule);
-                    botMethods.skip();
-                    break;
-            }
-        }
         $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
         setTimeout(function(){
             if(typeof response === 'undefined' && data.media.format != 2 && mubBot.settings.removedFilter){
                 API.sendChat("/me This video may be unavailable!!");
-                //botMethods.skip();
             }
         }, 1500);
  
