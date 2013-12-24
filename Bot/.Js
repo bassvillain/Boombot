@@ -299,8 +299,8 @@ function SKIP() {
 API.sendChat("Yo bruh don't play that shitty music again!");
 }
  
-API.on(API.CURATE_UPDATE, callback);
-function callback(obj)
+API.on(API.CURATE_UPDATE, curated);
+function curated(obj)
 {
 var media = API.getMedia();
 API.sendChat(obj.user.username + " Added this song!");
