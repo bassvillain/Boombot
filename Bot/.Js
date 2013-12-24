@@ -35,6 +35,8 @@
  *
  */
  
+ 
+ 
 var mubBot = {};
 var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
 var ruleSkip = {};
@@ -483,7 +485,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat(".{command} mention is included");
                             setTimeout(function(){
-                            API.sendChat("rules | themes | roominfo | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
+                            API.sendChat("rules | themes | help | whywoot | whymeh | wiki | link | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
                         }, 650);
                             setTimeout(function(){
                             API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
