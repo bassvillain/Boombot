@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
  
-mubBot.misc.version = "1.0.5";
+mubBot.misc.version = "1.0.7";
 mubBot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 mubBot.misc.changelog = "Added a secondary check for history";
 mubBot.misc.ready = true;
@@ -686,6 +686,17 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] === "undefined"){
                             }else{
                             API.sendChat(command[1]);
+                        }
+                    }
+                        break;
+                        
+                    case "add":
+                    if(API.getUser(data.fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
+                            $(".icon-curate").click();
+                            $($(".curate").children(".menu").children().children()[0]).mousedown();
+                        }else{
+                           API.sendChat("This command requires bouncer +");
                         }
                     }
                         break;
