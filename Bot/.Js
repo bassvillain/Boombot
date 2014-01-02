@@ -283,7 +283,7 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-API.sendChat("Welcome to the Boombox! @"+ user.username +"~ Read the rules and have fun!");
+API.sendChat("Welcome to the Boombox @"+ user.username +"! ~ Read the rules and have fun!");
 }
  
 API.on(API.DJ_ADVANCE, DJ);
