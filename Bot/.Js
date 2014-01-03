@@ -946,7 +946,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "rule":
                         if(mubBot.admins.indexOf(fromID) > -1){
                             if(typeof command[1] == "undefined"){
-                                if(mubBot.settings.rules){
+                                if(mubBot.settings.rules != 0.0001){
                                     API.sendChat(mubBot.settings.rules != 0.0001);
                                 }else{
                                     API.sendChat('rules is disabled');
