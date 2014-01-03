@@ -71,7 +71,7 @@ mubBot.filters.beggerWords = new Array();
  
 mubBot.settings.maxLength = 10; //minutes
 mubBot.settings.cooldown = 10; //seconds
-mubBot.settings.rules = 10;
+mubBot.settings.rules = NaN;
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
 mubBot.settings.swearFilter = false;
