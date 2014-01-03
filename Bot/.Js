@@ -72,6 +72,7 @@ mubBot.filters.beggerWords = new Array();
 mubBot.settings.maxLength = 10; //minutes
 mubBot.settings.cooldown = 10; //seconds
 mubBot.settings.rules = NaN;
+mubBot.settings.themes = NaN;
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
 mubBot.settings.swearFilter = false;
@@ -527,15 +528,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "theme":
-                    case "themes":
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("Hey @"+ data.from +"! Normally we do sample sessions or chill/hardcore days, if you have any suggestions to a cool session please suggest it here: www.facebook.com/groups/plugboombox/ ~ Keep in Touch!");
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-                        
                     case "whymeh":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Reserve Mehs for songs that are a) extremely overplayed b) off genre c) absolutely god awful or d) troll songs. ");
@@ -928,7 +920,30 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
+                        
+                    case "themes":
+                    case "theme":
+                        if(mubBot.admins.indexOf(fromID) > -1){
+                            if(typeof command[1] == "undefined"){
+                                if(mubBot.settings.themes != 0.0001){
+                                    API.sendChat('New themes: '+mubBot.settings.themes+'.');
+                                }else{
+                                    API.sendChat('Themes is disabled');
+                                }
+                            }else if(command[1] == "disable"){
+                                mubBot.settings.themes = 0.0001;
+                                API.sendChat('Themes is disabled');
+                            }else{
+                                mubBot.settings.themes = command[1];
+                                API.sendChat('New themes: '+mubBot.settings.themes+'.');
+                            }
+                        }
+                        botMethods.save();
+                        break;    
+                        
+                     
                     case "rules":
+                    case "rule":
                         if(mubBot.admins.indexOf(fromID) > -1){
                             if(typeof command[1] == "undefined"){
                                 if(mubBot.settings.rules != 0.0001){
