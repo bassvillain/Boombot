@@ -71,8 +71,8 @@ mubBot.filters.beggerWords = new Array();
  
 mubBot.settings.maxLength = 10; //minutes
 mubBot.settings.cooldown = 10; //seconds
-mubBot.settings.rules = NaN;
-mubBot.settings.themes = NaN;
+mubBot.settings.rules = 0;
+mubBot.settings.themes = 0;
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
 mubBot.settings.swearFilter = false;
@@ -926,7 +926,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(mubBot.admins.indexOf(fromID) > -1){
                             if(typeof command[1] == "undefined"){
                                 if(mubBot.settings.themes != 0.0001){
-                                    API.sendChat('New themes: '+mubBot.settings.themes+'.');
+                                    API.sendChat(mubBot.settings.themes);
                                 }else{
                                     API.sendChat('Themes is disabled');
                                 }
@@ -947,7 +947,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(mubBot.admins.indexOf(fromID) > -1){
                             if(typeof command[1] == "undefined"){
                                 if(mubBot.settings.rules != 0.0001){
-                                    API.sendChat('rules is '+mubBot.settings.rules+'.');
+                                    API.sendChat(mubBot.settings.rules);
                                 }else{
                                     API.sendChat('rules is disabled');
                                 }
@@ -956,7 +956,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat('rules is disabled');
                             }else{
                                 mubBot.settings.rules = command[1];
-                                API.sendChat('New rules are '+mubBot.settings.rules+'.');
+                                API.sendChat('New rules are: '+mubBot.settings.rules+'.');
                             }
                         }
                         botMethods.save();
@@ -1328,50 +1328,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                case "beer":
-                        if(typeof command[1] == "@"){
-                            var crowd = API.getUsers();
-                            var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomSentence = Math.floor(Math.random() * 3);
-                            switch(randomSentence){
-                                case 0:
-                                    API.sendChat("@" + crowd[randomUser].username + ", take this cold one, to refresh your mind !");
-                                    break;
-                                case 1:
-                                    API.sendChat("@" + crowd[randomUser].username + ", quickly! Drink this liquid gold before I do!");
-                                    break;
-                                case 2:
-                                    API.sendChat("One free frozen blonde for you, @" + crowd[randomUser].username + ".");
-                                    break;
-                                case 3:
-                                    API.sendChat("/me throws a brewski at @" + crowd[randomUser].username + "!");
-                                    break;
-                            }
-                        }else{
-                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
-                            var randomSentence = Math.floor(Math.random() * 3);
-                            switch(randomSentence){
-                                case 0:
-                                    API.sendChat("@" + botMethods.cleanString(command[1]) + ", take this cold one, to refresh your mind !");
-                                    break;
-                                case 1:
-                                    API.sendChat("@" + botMethods.cleanString(command[1]) + ", quickly! Drink this liquid gold before I do!");
-                                    break;
-                                case 2:
-                                    API.sendChat("One free frozen blonde for you, @" + crowd[randomUser].username + ".");
-                                    break;
-                                case 3:
-                                    API.sendChat("/me throws a brewski at @" + crowd[randomUser].username + "!");
-                                    break;
-                            }
-                        }
-                        if(mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-                       
-                      case "weed":
+                    case "weed":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
@@ -1466,6 +1423,52 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                     case "beer":
+                        if(typeof command[1] == "@"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("Hey kid want beer?");
+                                    setTimeout(function(){
+                                        API.sendChat("Gives :beer: to @"+crowd[randomUser].username);
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@"+crowd[randomUser].username+", take this cold one, to refresh your mind !");
+                                    break;
+                                case 2:
+                                    API.sendChat("@"+crowd[randomUser].username+", quickly! Drink this liquid gold before I do!");
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("Hey kid want beer?");
+                                    setTimeout(function(){
+                                        API.sendChat("Gives :beer: to @"+botMethods.cleanString(command[1]));
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@"+botMethods.cleanString(command[1])+", take this cold one, to refresh your mind !");
+                                    break;
+                                case 2:
+                                    API.sendChat("@"+botMethods.cleanString(command[1])+", quickly! Drink this liquid gold before I do!");
+                                    break;
+                            }
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;   
+                        
  
                      case "dogfact":
                         if(typeof command[1] == "undefined"){
