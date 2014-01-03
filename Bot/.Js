@@ -71,8 +71,8 @@ mubBot.filters.beggerWords = new Array();
  
 mubBot.settings.maxLength = 10; //minutes
 mubBot.settings.cooldown = 10; //seconds
-mubBot.settings.rules = 0;
-mubBot.settings.themes = 0;
+mubBot.settings.rules = 5;
+mubBot.settings.themes = 5;
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
 mubBot.settings.swearFilter = false;
@@ -924,9 +924,9 @@ botMethods.djAdvanceEvent = function(data){
                     case "themes":
                     case "theme":
                         if(mubBot.admins.indexOf(fromID) > -1){
-                            if(typeof command[1] == "/"){
+                            if(typeof command[1] == "undefined"){
                                 if(mubBot.settings.themes){
-                                    API.sendChat(mubBot.settings.themes);
+                                    API.sendChat(mubBot.settings.themes != 0.0001);
                                 }else{
                                     API.sendChat('Themes is disabled');
                                 }
@@ -945,9 +945,9 @@ botMethods.djAdvanceEvent = function(data){
                     case "rules":
                     case "rule":
                         if(mubBot.admins.indexOf(fromID) > -1){
-                            if(typeof command[1] == "/"){
+                            if(typeof command[1] == "undefined"){
                                 if(mubBot.settings.rules){
-                                    API.sendChat(mubBot.settings.rules);
+                                    API.sendChat(mubBot.settings.rules != 0.0001);
                                 }else{
                                     API.sendChat('rules is disabled');
                                 }
