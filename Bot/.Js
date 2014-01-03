@@ -924,8 +924,8 @@ botMethods.djAdvanceEvent = function(data){
                     case "themes":
                     case "theme":
                         if(mubBot.admins.indexOf(fromID) > -1){
-                            if(typeof command[1] == "undefined"){
-                                if(mubBot.settings.themes != 0.0001){
+                            if(typeof command[1] == "/"){
+                                if(mubBot.settings.themes){
                                     API.sendChat(mubBot.settings.themes);
                                 }else{
                                     API.sendChat('Themes is disabled');
@@ -945,8 +945,8 @@ botMethods.djAdvanceEvent = function(data){
                     case "rules":
                     case "rule":
                         if(mubBot.admins.indexOf(fromID) > -1){
-                            if(typeof command[1] == "undefined"){
-                                if(mubBot.settings.rules != 0.0001){
+                            if(typeof command[1] == "/"){
+                                if(mubBot.settings.rules){
                                     API.sendChat(mubBot.settings.rules);
                                 }else{
                                     API.sendChat('rules is disabled');
