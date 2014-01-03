@@ -71,8 +71,6 @@ mubBot.filters.beggerWords = new Array();
  
 mubBot.settings.maxLength = 10; //minutes
 mubBot.settings.cooldown = 10; //seconds
-mubBot.settings.rules = 5;
-mubBot.settings.themes = 5;
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
 mubBot.settings.swearFilter = false;
@@ -941,48 +939,6 @@ botMethods.djAdvanceEvent = function(data){
                             response = response + " | Removed Video Filter: "+ mubBot.settings.removedFilter;
                             API.sendChat(response);
                         }
-                        break;
-                        
-                        
-                    case "themes":
-                    case "theme":
-                        if(mubBot.admins.indexOf(fromID) > -1){
-                            if(typeof command[1] == "undefined"){
-                                if(mubBot.settings.themes){
-                                    API.sendChat(mubBot.settings.themes != 0.0001);
-                                }else{
-                                    API.sendChat('Themes is disabled');
-                                }
-                            }else if(command[1] == "disable"){
-                                mubBot.settings.themes = 0.0001;
-                                API.sendChat('Themes is disabled');
-                            }else{
-                                mubBot.settings.themes = command[1];
-                                API.sendChat('New themes: '+mubBot.settings.themes+'.');
-                            }
-                        }
-                        botMethods.save();
-                        break;    
-                        
-                     
-                    case "rules":
-                    case "rule":
-                        if(mubBot.admins.indexOf(fromID) > -1){
-                            if(typeof command[1] == "undefined"){
-                                if(mubBot.settings.rules != 0.0001){
-                                    API.sendChat(mubBot.settings.rules != 0.0001);
-                                }else{
-                                    API.sendChat('rules is disabled');
-                                }
-                            }else if(command[1] == "disable"){
-                                mubBot.settings.rules = 0.0001;
-                                API.sendChat('rules is disabled');
-                            }else{
-                                mubBot.settings.rules = command[1];
-                                API.sendChat('New rules are: '+mubBot.settings.rules+'.');
-                            }
-                        }
-                        botMethods.save();
                         break;
  
                     case "cooldown":
