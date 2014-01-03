@@ -468,7 +468,21 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
  
-                   case "commands":
+                   case "rules":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("Rules: 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard.");
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard.");
+                        }else{
+                            API.sendChat("Rules: 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard.");
+                        }
+                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+               
+                    case "commands":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat(".{command} mention is included");
                             setTimeout(function(){
@@ -525,6 +539,15 @@ botMethods.djAdvanceEvent = function(data){
                     case "slap":
                         if(typeof command[1] == "undefined"){
                         API.sendChat("@"+ data.from +" just gave a huge slap to @"+ API.getDJ().username +" for playing this awful track!");
+                        }
+                        break;
+                        
+                    case "theme":
+                    case "themes":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Hey @"+ data.from +"! Normally we do sample sessions or chill/hardcore days, if you have any suggestions to a cool session please suggest it here: www.facebook.com/groups/plugboombox/ ~ Keep in Touch!");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
                         
