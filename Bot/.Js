@@ -71,6 +71,7 @@ mubBot.filters.beggerWords = new Array();
  
 mubBot.settings.maxLength = 10; //minutes
 mubBot.settings.cooldown = 10; //seconds
+mubBot.settings.rules = 10;
 mubBot.settings.staffMeansAccess = true;
 mubBot.settings.historyFilter = true;
 mubBot.settings.swearFilter = false;
@@ -78,7 +79,6 @@ mubBot.settings.commandFilter = true;
 mubBot.settings.racismFilter = false;
 mubBot.settings.beggerFilter = true;
 mubBot.settings.interactive = true;
-mubBot.settings.ruleSkip = true;
 mubBot.settings.removedFilter = true;
  
 //Admins                [Dj-Neon-TFL]               [bassvillain]
@@ -467,21 +467,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
  
-                    case "rules":
-                        if(typeof command[1] == "undefined"){
-                            API.sendChat("Rules: 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard.");
-                        }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard.");
-                        }else{
-                            API.sendChat("Rules: 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard.");
-                        }
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-               
-                    case "commands":
+                   case "commands":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                             API.sendChat(".{command} mention is included");
                             setTimeout(function(){
@@ -937,10 +923,28 @@ botMethods.djAdvanceEvent = function(data){
                             response = response + " | History filter: "+mubBot.settings.historyFilter;
                             response = response + " | MaxLength: " + mubBot.settings.maxLength + "m";
                             response = response + " | Cooldown: " + mubBot.settings.cooldown + "s";
-                            response = response + " | BanSongs: "+ mubBot.settings.ruleSkip;
                             response = response + " | Removed Video Filter: "+ mubBot.settings.removedFilter;
                             API.sendChat(response);
                         }
+                        break;
+                        
+                    case "rules":
+                        if(mubBot.admins.indexOf(fromID) > -1){
+                            if(typeof command[1] == "undefined"){
+                                if(mubBot.settings.rules != 0.0001){
+                                    API.sendChat('rules is '+mubBot.settings.rules+'.');
+                                }else{
+                                    API.sendChat('rules is disabled');
+                                }
+                            }else if(command[1] == "disable"){
+                                mubBot.settings.rules = 0.0001;
+                                API.sendChat('rules is disabled');
+                            }else{
+                                mubBot.settings.rules = command[1];
+                                API.sendChat('New rules are '+mubBot.settings.rules+'.');
+                            }
+                        }
+                        botMethods.save();
                         break;
  
                     case "cooldown":
