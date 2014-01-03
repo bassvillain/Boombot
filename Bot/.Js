@@ -1550,6 +1550,29 @@ botMethods.djAdvanceEvent = function(data){
         }
  
     });
+    
+    API.on(API.CHAT, function(data){
+        if(data.message.indexOf('.rule ') === 0){
+            var msg = data.message, from = data.from, fromID = data.fromID;
+            var command = msg.substring(1).split(' ');
+        if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
+                switch(command[1]){
+                    case '1':
+                        API.sendChat("1) Don't replay a song on the room history.");
+                        break;
+                    case '2':
+                        API.sendChat("2) If the song has more MEHs than WOOTs, you should skip it.");
+                        break;
+                    case '3':
+                        API.sendChat("3) No auto-queue when away from keyboard.");
+                        break;
+                    default:
+                        API.sendChat("You faggot that's an Unknown rule!");
+                        break;
+                }
+            }
+        }
+    });
  
     API.on(API.DJ_ADVANCE, DJ_ADVANCE);
     function DJ_ADVANCE(data){
