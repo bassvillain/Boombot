@@ -38,7 +38,6 @@
  
  
 var mubBot = {};
-var total = API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
 var ruleSkip = {};
 mubBot.misc = {};
 mubBot.settings = {};
@@ -397,6 +396,7 @@ botMethods.djAdvanceEvent = function(data){
     API.on(API.CHAT, function(data){
         if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
+            var total = + API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
                 for(var i = 2; i<command.length; i++){
