@@ -431,17 +431,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "residentdj":
-                    case "residentdjs":
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("Resident DJs have no moderation privileges but their name will appear in the chat the same color as the community staff. 
-                            API.sendChat("This role is usually given to artists, promoters or friends of the Community Staff to make the person stand out from the crowd. Resident DJs can, however, join an empty DJ booth.");
-                         }, 650)
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
-                  
                     case "temporaryrules":
                     case "temporaryrule":
                     case "tr":
