@@ -431,7 +431,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                             
                     case "residentdj":
                     case "residentdjs":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
