@@ -619,6 +619,7 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
                         break;
+                        
                     case "manager":
                     case "managers":
                         if(mubBot.admins.indexOf(fromID) > -1 || API.getStaff().permission > 3){
