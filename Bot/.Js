@@ -970,7 +970,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
  
                     case "status":
-                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
+                        if(mubBot.admins.indexOf(fromID) > -1){
                             var response = "";
                             var currentTime = new Date().getTime();
                             var minutes = Math.floor((currentTime - joined) / 60000);
