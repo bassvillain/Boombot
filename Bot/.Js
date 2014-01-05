@@ -607,13 +607,25 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
+                    case "residentdj":
+                    case "residentdjs":
+                        if(mubBot.admins.indexOf(fromID) > -1 || API.getStaff().permission > 2){
+                            API.sendChat("Resident DJs have no moderation privileges but their name will appear in the chat the same color as the community staff.");
+                         setTimeout(function(){
+                            API.sendChat("This role is usually given to artists, promoters or friends of the Community Staff to make the person stand out from the crowd. Resident DJs can, however, join an empty DJ booth.");
+                         }, 650);
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
                         
                     case "bouncer":
                     case "bouncers":
                         if(mubBot.admins.indexOf(fromID) > -1 || API.getStaff().permission > 2){
-                            API.sendChat("Bouncers are people you trust to maintain order in the community, and a community can have an unlimited number of Bouncers. They can add/remove DJs, force skip, ban people from the community and delete offensive chat messages. Bouncers cannot");
+                            API.sendChat("Bouncers are people you trust to maintain order in the community, and a community can have an unlimited number of Bouncers. They can add/remove DJs, force skip, ban people from the community and delete offensive chat messages.");
                          setTimeout(function(){
-                            API.sendChat("Rank other users to be a bouncer.");
+                            API.sendChat("Bouncers cannot create other bouncers.");
                          }, 650);
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
