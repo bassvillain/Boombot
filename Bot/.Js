@@ -468,6 +468,16 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
+                    case "ba":
+                    case "brandambassador":
+                    case "ambassador"
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("Brand Ambassadors have all of the same abilities of Managers, except their privileges extend across all of the communities on plug.dj. Brand Ambassadors are a good resource for answering general questions you may have. Brand Ambassadors will have a green microphone next to their name in chat. They are there to assist you.");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
                     case "temporaryrules":
                     case "temporaryrule":
                     case "tr":
