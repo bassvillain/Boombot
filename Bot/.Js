@@ -481,7 +481,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "temporaryrule":
                     case "tr":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("Temporary Rule: Rap in english only. Read info.);
+                            API.sendChat("Temporary Rule: Rap in english only. Read info.");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
