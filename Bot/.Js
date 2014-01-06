@@ -1625,6 +1625,15 @@ botMethods.djAdvanceEvent = function(data){
                 }
             
         }
+        if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
+            if(msg.indexOf("what are the rules bot?") !== -1 || msg.indexOf("bot what are the rules?") !== -1 || msg.indexOf("what the rules") !== -1 || msg.indexOf("whats the rule") !== -1 || msg.indexOf("whats the rule?") !== -1 || msg.indexOf("Whats the rules here?") !== -1 || msg.indexOf("what the rule here?") !== -1 || msg.indexOf("bot what are the rules in here?") !== -1 || msg.indexOf("bot whats the rule in here?") !== -1 || msg.indexOf("what r the rules?") !== -1 || msg.indexOf("wat r the rules") !== -1 || msg.indexOf("wat r the rule") !== -1 || ){
+                var HelloMsg = ["Hey!","Oh hey there!","Good day sir!","Hi","Howdy!","Waddup!"];
+                API.sendChat("@" + data.from + " " + HelloMsg[Math.floor(Math.random() * HelloMsg.length)]);
+                    mubBot.misc.ready = false;
+                    setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                }
+            
+        }
  
     });
     
