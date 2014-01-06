@@ -1615,7 +1615,6 @@ botMethods.djAdvanceEvent = function(data){
                     mubBot.misc.ready = false;
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                 }
-            }
             
         }
  
