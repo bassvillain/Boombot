@@ -296,7 +296,8 @@ function DJ(obj) {
  
 API.on(API.VOTE_SKIP, SKIP);
 function SKIP() {
-API.sendChat("Yo bruh don't play that shitty music again!");
+var SkipMsg = ["Yo man don't play the shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
+API.sendChat(SkipMsg[Math.floor(Math.random() * SkipMsg.length)]);
 }
  
 API.on(API.CURATE_UPDATE, curated);
@@ -1649,6 +1650,7 @@ botMethods.djAdvanceEvent = function(data){
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                 }
         }
+        
  
     });
     
