@@ -1630,7 +1630,7 @@ botMethods.djAdvanceEvent = function(data){
                msg.indexOf('Aye bot') > -1 || 
                msg.indexOf('bot Aye') > -1 || 
                msg.indexOf('Waddup bot') > -1 || 
-               msg.indexOf('bot Waddup') > -1 || ){
+               msg.indexOf('bot Waddup') > -1){
                 var HelloMsg = ["Hey!","Oh hey there!","Good day sir!","Hi","Howdy!","Waddup!"];
                 API.sendChat("@" + data.from + " " + HelloMsg[Math.floor(Math.random() * HelloMsg.length)]);
                     mubBot.misc.ready = false;
