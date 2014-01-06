@@ -416,7 +416,7 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                     
                     case "flipcoin":
-                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                        if( mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                         var FlipMsg = ["My magic coins says: Tails", "My magic coin says: Heads"];
                             API.sendChat("@"+ data.from +" "+FlipMsg[Math.floor(Math.random() * FlipMsg.length)]);
                             mubBot.misc.ready = false;
