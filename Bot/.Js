@@ -673,11 +673,12 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "linkin":
                         if(typeof command[1] == "undefined"){
+                        var IdiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid yo","What do i look like a porn bot?","What are you an idiot?"];
                             API.sendChat("@" + data.from + " Put a link starting off from www.");
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
                             API.sendChat("http://"+command[1]);
                         }else{
-                            API.sendChat("@"+ data.from +" What are you an idiot?");
+                            API.sendChat("@"+ data.from +" "+ IdiotMsg[Math.floor(Math.random() * IdiotMsg.length)]);
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
@@ -687,11 +688,12 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "define":
                         if(typeof command[1] == "undefined"){
+                        var IdiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid yo","What do i look like a porn bot?","What are you an idiot?"];
                             API.sendChat("@" + data.from + " Define what?!");
                         }else if(command[1].toLowerCase().indexOf("xxx") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
                             API.sendChat("@"+ data.from +" http://www.urbandictionary.com/define.php?term="+command[1]);
                         }else{
-                            API.sendChat("@"+ data.from +" What are you an idiot?");
+                            API.sendChat("@"+ data.from +" "+ IdiotMsg[Math.floor(Math.random() * IdiotMsg.length)]);
                         }
                         if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             mubBot.misc.ready = false;
