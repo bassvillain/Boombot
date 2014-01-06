@@ -1609,8 +1609,29 @@ botMethods.djAdvanceEvent = function(data){
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                 }
             }
-            if(msg.indexOf('hello bot') > -1){
-                var HelloMsg = ["Hey!","Oh hey there!","Good day sir!","Hi"];
+            
+        }
+ 
+    });
+    
+    API.on(API.CHAT, function(data){
+        msg = data.message.toLowerCase(), chatID = data.chatID, fromID = data.fromID;
+        if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
+            if(msg.indexOf('hello bot') > -1 || 
+               msg.indexOf('bot hello') > -1 || 
+               msg.indexOf('Hi bot') > -1 || 
+               msg.indexOf('bot Hi') > -1 || 
+               msg.indexOf('Sup bot') > -1 || 
+               msg.indexOf('bot Sup') > -1 || 
+               msg.indexOf('Hey bot') > -1 || 
+               msg.indexOf('bot Hey') > -1 || 
+               msg.indexOf('Howdy bot') > -1 || 
+               msg.indexOf('bot Howdy') > -1 || 
+               msg.indexOf('Aye bot') > -1 || 
+               msg.indexOf('bot Aye') > -1 || 
+               msg.indexOf('Waddup bot') > -1 || 
+               msg.indexOf('bot Waddup') > -1 || ){
+                var HelloMsg = ["Hey!","Oh hey there!","Good day sir!","Hi","Howdy!","Waddup!"];
                 API.sendChat("@" + data.from + " " + HelloMsg[Math.floor(Math.random() * HelloMsg.length)]);
                     mubBot.misc.ready = false;
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
