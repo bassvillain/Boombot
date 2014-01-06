@@ -118,7 +118,6 @@ mubBot.misc.ball = [
 " Outlook not so good",
 " Very doubtful"];
  
-mubBot.misc.ht = ["My magic coins says: Tails", "My magic coin says: Heads"];
 mubBot.misc.roll = [
 "You rolled A 1. Bummer :(",
 "You rolled A 2.Bummer :(",
@@ -411,6 +410,15 @@ botMethods.djAdvanceEvent = function(data){
                     case "votes":
                         if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
                             API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :purple_heart: " + API.getRoomScore().curates+" | :-1: " + API.getRoomScore().negative);
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                    
+                    case "flipcoin":
+                        if(API.getUser(fromID).permission < 2 || mubBot.admins.indexOf(fromID) > -1){
+                        var FlipMsg = ["My magic coins says: Tails", "My magic coin says: Heads"];
+                            API.sendChat("@"+ data.from +" "+FlipMsg[Math.floor(Math.random() * FlipMsg.length)]);
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
@@ -1263,39 +1271,6 @@ botMethods.djAdvanceEvent = function(data){
                                     break;
                                 case 1:
                                     API.sendChat("@" + data.from + ", "+ mubBot.misc.ball[randomBall]);
-                                    break;
-                           }
-                        }
-                        if(mubBot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                        }
-                        break;
- 
-                    case "flipcoin":
-                        if(typeof command[1] == "undefined"){
-                            var crowd = API.getUsers();
-                            var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomHt = Math.floor(Math.random() * mubBot.misc.ht.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
-                            switch(randomSentence){
-                                case 0:
-                                    API.sendChat(mubBot.misc.ht[randomHt]);
-                                    break;
-                                case 1:
-                                    API.sendChat(mubBot.misc.ht[randomHt]);
-                                    break;
-                            }
-                        }else{
-                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
-                            var randomHt = Math.floor(Math.random() * mubBot.misc.ht.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
-                            switch(randomSentence){
-                                case 0:
-                                    API.sendChat(mubBot.misc.ht[randomHt]);
-                                    break;
-                                case 1:
-                                    API.sendChat(mubBot.misc.ht[randomHt]);
                                     break;
                            }
                         }
