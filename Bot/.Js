@@ -1609,6 +1609,13 @@ botMethods.djAdvanceEvent = function(data){
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                 }
             }
+            if(msg.indexOf('hello bot') > -1){
+                var HelloMsg = ["Hey!","Oh hey there!","Good day sir!","Hi"];
+                API.sendChat("@" + data.from + " " + HelloMsg[Math.floor(Math.random() * HelloMsg.length)]);
+                    mubBot.misc.ready = false;
+                    setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                }
+            }
             
         }
  
