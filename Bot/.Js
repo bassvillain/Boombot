@@ -280,7 +280,7 @@ API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-var JoinMsg = ["Yo waddup man!","Sup yo!","Welcome to BoomBox mate!","Aye mate!","Oh sheeeet look who is here :D"];
+var JoinMsg = ["Yo waddup man!","Sup yo!","Welcome to The Boombox mate!","Aye mate!","Oh sheeeet look who is here :D"];
 API.sendChat(JoinMsg[Math.floor(Math.random() * JoinMsg.length)]+" @"+ user.username +" ~ Read the rules and have fun!");
 }
  
