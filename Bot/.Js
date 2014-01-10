@@ -299,6 +299,18 @@ function SKIP() {
 var SkipMsg = ["Yo man don't play the shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
 API.sendChat(SkipMsg[Math.floor(Math.random() * SkipMsg.length)]);
 }
+
+API.on(API.USER_JOIN, Adminlist);
+function Adminlist(user)
+{
+var Adminlist = ["50aeaeb6c3b97a2cb4c25bd2"];
+var AdminMsg = ["Oh.. Ohhhhh.. Get your shit straight guys room admin @{user} has joined!"
+r = Math.floor(Math.random() * AdminMsg.length);
+
+if (Adminlist.indexOf(user.id) > -1 ) {
+API.sendChat(AdminMsg[r].replace("{user}", user.username));
+ }
+}
  
 API.on(API.CURATE_UPDATE, curated);
 function curated(obj)
