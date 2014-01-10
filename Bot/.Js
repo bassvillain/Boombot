@@ -285,8 +285,8 @@ var AdminMsg = ["Oh.. Ohhhhh.. Get your shit straight guys room admin @{user} ha
 r = Math.floor(Math.random() * AdminMsg.length);
 admin = ["50aeaeb6c3b97a2cb4c25bd2","50aeaeb8d6e4a94f77470a11"];
 API.sendChat(JoinMsg[Math.floor(Math.random() * JoinMsg.length)]+" @"+ user.username +" ~ Read the rules and have fun!");
-}else if{
-(admin.indexOf(user.id) > -1) {
+}else{
+if (admin.indexOf(user.id) > -1) {
 API.sendChat(AdminMsg[r].replace("{user}", user.username));
         }
 }
