@@ -284,18 +284,6 @@ var JoinMsg = ["Yo waddup man!","Sup yo!","Welcome to The Boombox mate!","Aye ma
 API.sendChat(JoinMsg[Math.floor(Math.random() * JoinMsg.length)]+" @"+ user.username +" ~ Read the rules and have fun!");
 }
 
-API.on(API.USER_JOIN, Adminlist);
-function Adminlist(user)
-{
-var Adminlist = ["50aeaeb6c3b97a2cb4c25bd2"];
-var AdminMsg = ["Oh.. Ohhhhh.. Get your shit straight guys room admin @{user} has joined!"
-r = Math.floor(Math.random() * AdminMsg.length);
-
-if (Adminlist.indexOf(user.id) > -1 ) {
-API.sendChat(AdminMsg[r].replace("{user}", user.username));
- }
-}
-
 API.on(API.DJ_ADVANCE, DJ);
 function DJ(obj) {
   if (obj == null) return;
