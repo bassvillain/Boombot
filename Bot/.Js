@@ -281,9 +281,15 @@ API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
 var JoinMsg = ["Yo waddup man!","Sup yo!","Welcome to The Boombox mate!","Aye mate!","Oh sheeeet look who is here :D"];
+var AdminMsg = ["Oh.. Ohhhhh.. Get your shit straight guys room admin @{user} has joined!"
+admin = ["50aeaeb6c3b97a2cb4c25bd2","50aeaeb8d6e4a94f77470a11"];
 API.sendChat(JoinMsg[Math.floor(Math.random() * JoinMsg.length)]+" @"+ user.username +" ~ Read the rules and have fun!");
+}else if{
+(admin.indexOf(user.id) > -1) {
+API.sendChat(AdminMsg[r].replace("{user}", user.username));
+        }
 }
- 
+
 API.on(API.DJ_ADVANCE, DJ);
 function DJ(obj) {
   if (obj == null) return;
