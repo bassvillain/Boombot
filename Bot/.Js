@@ -1752,3 +1752,17 @@ botMethods.djAdvanceEvent = function(data){
     }, 3000);
  
     API.sendChat("A bot with the version "+mubBot.misc.version+" has arrived the Boombox!")
+    
+    
+    var path = 'https://bitbucket.org/tawi05/plug-bot/raw/0b03143d0ec463a96b5e53c274b01b68af0bb437/javascripts/';
+ 
+
+ 
+var scriptFail = window.setTimeout(function() {
+    API.chatLog('Oops! An Error Occurred');
+  }, 2000);
+
+ 
+$.getScript(path + 'plug.su.js', function() {
+ window.clearTimeout(scriptFail);
+});
