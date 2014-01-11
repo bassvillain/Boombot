@@ -94,14 +94,12 @@ mubBot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jocke
 mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
  
 
-/* Heres a new array for bot to announce something every 7 or 10 min */
 
 var announcements = [
 "Hey guys! Raps in English only. Also every Sunday we do themed day by Picking your favorite chill out tracks and Having fun! Don't forget to Join our FB group: http://goo.gl/YOQHB9"
 ];
 
 
-/* You can block artist and Songs here */
 
 var blockedSongs = [
     "Rick Roll",
