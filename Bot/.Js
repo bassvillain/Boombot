@@ -60,6 +60,7 @@ mubBot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
+var path = 'http://goo.gl/';
 
  
 joined = new Date().getTime();
@@ -1754,7 +1755,6 @@ botMethods.djAdvanceEvent = function(data){
     API.sendChat("A bot with the version "+mubBot.misc.version+" has arrived the Boombox!")
     
     
-var path = 'http://goo.gl/';
 
 var scriptFail = window.setTimeout(function() {
     API.chatLog('Oops! An Error Occurred');
