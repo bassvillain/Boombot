@@ -427,8 +427,6 @@ function chatMe(msg)
         API.sendChat(msg);
 }
  
-chatMe("Secondary block songs and Artist Added!");
-
 botMethods.getID = function(username){
     var users = API.getUsers();
     var result = "";
