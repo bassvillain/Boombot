@@ -50,7 +50,7 @@ toSave = {};
 toSave.settings = mubBot.settings;
 toSave.moderators = mubBot.moderators;
  
-mubBot.misc.version = "1.0.10";
+mubBot.misc.version = "1.0.15";
 mubBot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 mubBot.misc.changelog = "Added a secondary check for history";
 mubBot.misc.ready = true;
