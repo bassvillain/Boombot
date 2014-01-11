@@ -309,6 +309,7 @@ API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
 var JoinMsg = ["Yo waddup @user","Sup yo! @user","Welcome to The Boombox mate! @user","Aye mate! @user","Yo @user"];
+r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and have fun!");
 }
  
