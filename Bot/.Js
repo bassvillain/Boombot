@@ -313,16 +313,6 @@ r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and have fun!");
 }
  
-API.on(API.DJ_ADVANCE, DJ);
-function DJ(obj) {
-  if (obj == null) return;
-  var str = "";
-  var currentDJ = obj.dj;
-  str += currentDJ.username;
-  str += " Is now playing: " + obj.media.author + " - " + obj.media.title;
-  API.sendChat(str);
-}
- 
 API.on(API.VOTE_SKIP, SKIP);
 function SKIP() {
 var SkipMsg = ["Yo man don't play the shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
