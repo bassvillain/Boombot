@@ -57,7 +57,10 @@ mubBot.misc.ready = true;
 mubBot.misc.lockSkipping = false;
 mubBot.misc.lockSkipped = "0";
 mubBot.misc.tacos = new Array();
- 
+var songBoundary = 60 * 7;
+var announcementTick = 60 * 7;
+var lastAnnouncement = 0;
+
  
 joined = new Date().getTime();
  
@@ -90,7 +93,34 @@ mubBot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jocke
  
 mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
  
-//Fun commands for misc below.
+
+// Random announcements
+
+var announcements = [
+"Hey guys! Raps in English only. Also every Sunday we do themed day by Picking your favorite chill out tracks and Having fun! Don't forget to Join our FB group: http://goo.gl/YOQHB9"
+];
+
+
+// Block songs and Artist
+
+var blockedSongs = [
+    "Rick Roll",
+    "GANGNAM",
+    "The Fox",
+    "The Fox [Official music video HD]",
+    "10 hour"
+];
+ 
+var blockedArtists = [
+    "Rick Astley",
+    "Miley Cyrus",
+    "Justin bieber",
+    "Rebbeca black"
+];
+
+
+
+//Fun Misc below
  
 mubBot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
  
@@ -300,6 +330,9 @@ var SkipMsg = ["Yo man don't play the shitty music again","HaHa! My nigguh got s
 API.sendChat(SkipMsg[Math.floor(Math.random() * SkipMsg.length)]);
 }
  
+API.on(API.DJ_ADVANCE, listener);
+window.setInterval(sendAnnouncement, 1000 * announcementTick);
+ 
 API.on(API.CURATE_UPDATE, curated);
 function curated(obj)
 {
@@ -311,6 +344,7 @@ function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
 }
  
+
 botMethods.skip = function(){
     setTimeout(function(){
         if(!cancel) API.moderateForceSkip();
@@ -345,6 +379,56 @@ botMethods.checkHistory = function(){
     return caught;
 };
  
+function listener(data)
+{
+    if (data == null)
+    {
+        return;
+    }
+ 
+    var title = data.media.title;
+    var author = data.media.author;
+    for (var i = 0; i < blockedSongs.length; i++)
+    {
+        if (title.indexOf(blockedSongs[i]) != -1 || author.indexOf(blockedArtists[i]) != -1)
+        {
+            API.moderateForceSkip();
+            chatMe("I Skipped: \"" + title + "\" because it is blocked.");
+            return;
+        }
+    }
+ 
+    var songLenRaw = $("#time-remaining-value").text();
+    var songLenParts = songLenRaw.split(":");
+    var songLen = (parseInt(songLenParts[0].substring(1)) * 60) + parseInt(songLenParts[1]);
+    if (songLen >= songBoundary)
+    {
+        window.setTimeout(skipLongSong, 1000 * songBoundary);
+    }
+}
+ 
+function skipLongSong()
+{
+    API.moderateForceSkip();
+    chatMe("Skipping song because it has exceeded the song limit (" + (songBoundary / 60) + " minutes.)");
+}
+ 
+function sendAnnouncement()
+{
+        if (lastAnnouncement++ >= announcements.length - 1)
+        {
+                lastAnnouncement = 0;
+        }
+    chatMe(announcements[lastAnnouncement]);
+}
+ 
+function chatMe(msg)
+{
+        API.sendChat(msg);
+}
+ 
+chatMe("Secondary block songs and Artist Added!");
+
 botMethods.getID = function(username){
     var users = API.getUsers();
     var result = "";
