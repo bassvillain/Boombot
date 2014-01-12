@@ -114,13 +114,13 @@ var blockedArtists = [
     "Rick Astley",
     "Miley Cyrus",
     "Justin bieber",
-    "Rebbeca black"
-    "2pac"
-    "Wiz Khalifa"
-    "Lil Wayne"
-    "Drake"
-    "2 Chainz"
-    "2Chainz"
+    "Rebbeca black",
+    "2pac",
+    "Wiz Khalifa",
+    "Lil Wayne",
+    "Drake",
+    "2 Chainz",
+    "2Chainz",
 ];
 
 
@@ -1718,6 +1718,14 @@ botMethods.djAdvanceEvent = function(data){
         if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("fuck you bot") !== -1 || msg.indexOf("bot fuck you") !== -1 || msg.indexOf("f u bot") !== -1 || msg.indexOf("bot f u") !== -1 || msg.indexOf("fuhk yuh bot") !== -1 || msg.indexOf("bot fuhk you") !== -1){
                 var FuckMsg = ["Nah.. I don't need another fuck after giving your mom one last night.","</input fuck> Jk... Fuck you too","< Test fuck >.. Sorry 0% fucks were given by me."];
+                API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
+                    mubBot.misc.ready = false;
+                    setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                }
+        }        
+        if(mubBot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
+            if(msg.indexOf("son of a bitch bot") !== -1 || msg.indexOf("bot son of a bitch") !== -1 || msg.indexOf("soab bot") !== -1 || msg.indexOf("bot soab") !== -1 || msg.indexOf("son of a biatch bot") !== -1 || msg.indexOf("bot son of a biatch") !== -1){
+                var FuckMsg = ["Nah.. Actually im the son of Bender.","you no-good, rat-bastard human, die in a fire.","< Test fuck >.. Sorry 0% fucks were given by me."];
                 API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
                     mubBot.misc.ready = false;
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
