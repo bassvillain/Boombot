@@ -97,7 +97,7 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 
 
 var announcements = [
-"Hey guys! Don't forget to Join our FB group: http://goo.gl/YOQHB9"
+""
 ];
 
 
