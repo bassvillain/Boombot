@@ -97,7 +97,7 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 
 
 var announcements = [
-"Yo peeps, We're doing a themed day.. It's Chill Sunday! Go grab your best chill out tracks and have fun!!"
+"Yo peeps, we're doing a themed day.. It's Chill Sunday! Go grab your best chill out tracks and have fun!!"
 ];
 
 
@@ -115,6 +115,12 @@ var blockedArtists = [
     "Miley Cyrus",
     "Justin bieber",
     "Rebbeca black"
+    "2pac"
+    "Wiz Khalifa"
+    "Lil Wayne"
+    "Drake"
+    "2 Chainz"
+    "2Chainz"
 ];
 
 
