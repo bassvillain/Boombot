@@ -97,7 +97,7 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 
 
 var announcements = [
-""
+"Yo peeps, We're doing a themed day.. It's Chill Sunday! Go grab your best chill out tracks and have fun!!"
 ];
 
 
@@ -516,6 +516,15 @@ botMethods.djAdvanceEvent = function(data){
                     case "facebook":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Hey @"+ data.from +"! I bet you're cute or handsome! Join our facebook group here: http://goo.gl/YOQHB9 ~ Keep in Touch!");
+                            mubBot.misc.ready = false;
+                            setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                    case "cs":
+                    case "chillsunday":
+                        if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("We're doing a themed day! It's Chill Sunday! Go grab your best chill out tracks and have fun!");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                         }
