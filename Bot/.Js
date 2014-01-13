@@ -97,7 +97,7 @@ mubBot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","
 
 
 var announcements = [
-"Yo peeps, we're doing a themed day.. It's Chill Sunday! Go grab your best chill out tracks and have fun!!"
+""
 ];
 
 
