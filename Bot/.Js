@@ -484,7 +484,6 @@ botMethods.djAdvanceEvent = function(data){
     API.on(API.CHAT, function(data){
         if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
-            var total = + API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
             var command = msg.substring(1).split(' ');
             if(typeof command[2] != "undefined"){
                 for(var i = 2; i<command.length; i++){
@@ -513,6 +512,7 @@ botMethods.djAdvanceEvent = function(data){
                
                     case "djinfo":
                         if(API.getUser(fromID).permission > 1 || mubBot.admins.indexOf(fromID) > -1){
+                            var total = + API.getDJ().djPoints + API.getDJ().listenerPoints + API.getDJ().curatorPoints;
                             API.sendChat("Current dj is: "+ API.getDJ().username +". Points: "+ total +" | Fans: "+API.getDJ().fans+" | Curated: "+ API.getDJ().curatorPoints +".");
                             mubBot.misc.ready = false;
                             setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
