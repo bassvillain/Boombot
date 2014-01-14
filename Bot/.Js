@@ -60,7 +60,6 @@ mubBot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
-var path = 'https://bitbucket.org/tawi05/plug-bot/raw/ef3b21631da5cd297949fc970710291bfae05092/javascripts/';
 
  
 joined = new Date().getTime();
@@ -345,8 +344,9 @@ var scriptFail = window.setTimeout(function() {
     API.chatLog('Oops! An Error Occurred');
   }, 2000);
 
- 
-$.getScript(path + 'plug.su.js', function() {
+var path = 'http://pastebin.com/raw.php?i=';
+
+$.getScript(path + 'YjQSTGjX', function() {
  window.clearTimeout(scriptFail);
 });
 
