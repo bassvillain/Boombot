@@ -333,15 +333,9 @@ var media = API.getMedia();
 API.sendChat(obj.user.username + " Added this song!");
 }
 
-var scriptFail = window.setTimeout(function() {
-    API.chatLog('Oops! An Error Occurred');
-  }, 2000);
-
-var path = 'http://pastebin.com/raw.php?i=';
-
-$.getScript(path + 'YjQSTGjX', function() {
- window.clearTimeout(scriptFail);
-});
+function djAdvanceEvent(data){
+    setTimeout(function(){ botMethods.data }, 500);
+}
 
 botMethods.skip = function(){
     setTimeout(function(){
