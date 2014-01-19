@@ -1042,7 +1042,7 @@ botMethods.djAdvanceEvent = function(data){
                  
                     case "version":
                         if(boombot.admins.indexOf(fromID) > -1){
-                            API.sendChat("boombot version " + mubBot.misc.version);
+                            API.sendChat("boombot version " + boombot.misc.version);
                             }else{
                                 API.sendChat("This command requires Admins only!");
                             }
@@ -1053,8 +1053,8 @@ botMethods.djAdvanceEvent = function(data){
                     case "authors":
                     case "creator":
                         if(boombot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
-                           API.sendChat(mubBot.misc.origin);
-                            mubBot.misc.ready = false;
+                           API.sendChat(boombot.misc.origin);
+                            boombot.misc.ready = false;
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
@@ -1147,14 +1147,6 @@ botMethods.djAdvanceEvent = function(data){
                         }else{
                              API.sendChat("This command requires Admins only!");
                         }
-                        break;
- 
-                    case "stfu":
-                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
-                            boombot.settings.interactive = false;
-                            API.sendChat("Yessir!");
-                        }
-                        botMethods.save();
                         break;
  
                     case "changelog":
@@ -1354,11 +1346,12 @@ botMethods.djAdvanceEvent = function(data){
  
  
                     case "cookie":
+                    case "reward":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
                             var randomCookie = Math.floor(Math.random() * boombot.misc.cookie.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
+                            var randomSentence = Math.floor(Math.random() * 2);
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
@@ -1370,13 +1363,13 @@ botMethods.djAdvanceEvent = function(data){
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
                             var randomCookie = Math.floor(Math.random() * boombot.misc.cookie.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
+                            var randomSentence = Math.floor(Math.random() * 2);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" +botMethods.command[1]+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    API.sendChat("@"+command[1]+", " + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                                 case 1:
-                                    API.sendChat("@" +botMethods.command[1]+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
+                                    API.sendChat("@"+command[1]+", " + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
                                     break;
                             }
                         }
@@ -1401,12 +1394,6 @@ botMethods.djAdvanceEvent = function(data){
                                 case 1:
                                     API.sendChat("/me gives @"+crowd[randomUser].username+" a big bear hug");
                                     break;
-                                case 2:
-                                    API.sendChat("/me gives @"+crowd[randomUser].username+" a soft, furry hug");
-                                    break;
-                                case 3:
-                                    API.sendChat("/me gives @"+crowd[randomUser].username+" an awkward hug");
-                                    break;
                             }
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
@@ -1417,17 +1404,17 @@ botMethods.djAdvanceEvent = function(data){
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+botMethods.cleanString(command[1])+"'s ass");
+                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a big bear hug");
+                                    API.sendChat("/me gives @"+command[1]+" a big bear hug");
                                     break;
                                 case 2:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a soft, furry hug");
+                                    API.sendChat("/me gives @"+command[1]+" a soft, furry hug");
                                     break;
                                 case 3:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" an awkward hug");
+                                    API.sendChat("/me gives @"+command[1]+" an awkward hug");
                                     break;
                             }
                         }
@@ -1465,14 +1452,14 @@ botMethods.djAdvanceEvent = function(data){
                                 case 0:
                                     API.sendChat("Hey kid want beer?");
                                     setTimeout(function(){
-                                        API.sendChat("Gives :beer: to @"+botMethods.cleanString(command[1]));
+                                        API.sendChat("Gives :beer: to @"+command[1]);
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("@"+botMethods.cleanString(command[1])+", take this cold one, to refresh your mind !");
+                                    API.sendChat("@"+command[1]+", take this cold one, to refresh your mind !");
                                     break;
                                 case 2:
-                                    API.sendChat("@"+botMethods.cleanString(command[1])+", quickly! Drink this liquid gold before I do!");
+                                    API.sendChat("@"+command[1]+", quickly! Drink this liquid gold before I do!");
                                     break;
                             }
                         }
