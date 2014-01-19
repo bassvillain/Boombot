@@ -124,9 +124,6 @@ var blockedArtists = [
 ];
 
 
-
-//Fun Misc below
- 
 boombot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
  
 boombot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
