@@ -1592,7 +1592,7 @@ botMethods.djAdvanceEvent = function(data){
  
     API.on(API.CHAT, function(data){
         msg = data.message.toLowerCase(), chatID = data.chatID, fromID = data.fromID;
-        if(mubBot.misc.ready || boombot.admins.indexOf(fromID) > -1 ||API.getUser(fromID).permission > 1){
+        if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf(':eyeroll:') > -1){
                 API.sendChat('/me ¬_¬');
                 if(boombot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
