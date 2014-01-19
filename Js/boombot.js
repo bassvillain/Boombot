@@ -1187,26 +1187,26 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 6);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("/me rubs sandpaper on @"+botMethods.cleanString(command[1])+"'s scrotum");
+                                    API.sendChat("/me rubs sandpaper on "+command[1]+"'s scrotum");
                                     break;
                                 case 1:
-                                    API.sendChat("/me penetrates @"+botMethods.cleanString(command[1])+" with a sharpie");
+                                    API.sendChat("/me penetrates "+command[1]+" with a sharpie");
                                     break;
                                 case 2:
-                                    API.sendChat("/me pokes @"+botMethods.cleanString(command[1])+" in the eyes");
+                                    API.sendChat("/me pokes "+command[1]+" in the eyes");
                                     break;
                                 case 3:
-                                    API.sendChat("/me makes @"+botMethods.cleanString(command[1])+"'s mother cry");
+                                    API.sendChat("/me makes "+command[1]+"'s mother cry");
                                     break;
                                 case 4:
-                                    API.sendChat("/me pinches @"+botMethods.cleanString(command[1])+"'s nipples super hard");
+                                    API.sendChat("/me pinches "+command[1]+"'s nipples super hard");
                                     break;
                                 case 5:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a wet willy");
+                                    API.sendChat("/me gives "+command[1]+" a wet willy");
                                     break;
  
                                 case 6:
-                                    API.sendChat("/me Sets @"+botMethods.cleanString(command[1])+" hair on fire");
+                                    API.sendChat("/me Sets "+command[1]+" hair on fire");
                                     break;
                             }
                         }else{
@@ -1214,26 +1214,26 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 6);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("/me rubs sandpaper on @"+botMethods.cleanString(command[1])+"'s scrotum");
+                                    API.sendChat("/me rubs sandpaper on "+command[1]+"'s scrotum");
                                     break;
                                 case 1:
-                                    API.sendChat("/me penetrates @"+botMethods.cleanString(command[1])+" with a sharpie");
+                                    API.sendChat("/me penetrates "+command[1]+" with a sharpie");
                                     break;
                                 case 2:
-                                    API.sendChat("/me pokes @"+botMethods.cleanString(command[1])+" in the eyes");
+                                    API.sendChat("/me pokes "+command[1]+" in the eyes");
                                     break;
                                 case 3:
-                                    API.sendChat("/me makes @"+botMethods.cleanString(command[1])+"'s mother cry");
+                                    API.sendChat("/me makes "+command[1]+"'s mother cry");
                                     break;
                                 case 4:
-                                    API.sendChat("/me pinches @"+botMethods.cleanString(command[1])+"'s nipples super hard");
+                                    API.sendChat("/me pinches "+command[1]+"'s nipples super hard");
                                     break;
                                 case 5:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a wet willy");
+                                    API.sendChat("/me gives "+command[1]+" a wet willy");
                                     break;
  
                                 case 6:
-                                    API.sendChat("/me Sets @"+botMethods.cleanString(command[1])+" hair on fire");
+                                    API.sendChat("/me Sets "+command[1]+" hair on fire");
                                     break;
                             }
                         }
