@@ -152,11 +152,13 @@ boombot.misc.ball = [
  
 boombot.misc.roll = [
 "You rolled A 1. Bummer :(",
-"You rolled A 2.Bummer :(",
-"You rolled A 3. Bummer :(",
-"You rolled A 4. Awesome!",
-"You rolled A 5. Awesome!",
-"You rolled A 6. Awesome!"];
+"You rolled A 2. Bummer :(",
+"You rolled A 3. Bummer :("];
+
+boombot.misc.roll2 = [
+"4. Awesome!",
+"5. Awesome!",
+"6. Awesome!"];
  
 boombot.misc.catfact = ["Cats have five toes on each front paw, but only four toes on each back paw.","Cats have true fur, in that they have both an undercoat and an outer coat.",
 "Newborn kittens have closed ear canals that don''t begin to open for nine days.When the eyes open, they are always blue at first. They change color over a period of months to the final eye color.",
@@ -1252,7 +1254,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + data.from + ","+ boombot.misc.roll[randomRoll]);
+                                    API.sendChat("@"+ data.from +" You rolled a "+ boombot.misc.roll2[randomRoll]);
+                                    setTimeout(function(){
+                                    document.getElementById("woot").click()
+                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("@" + data.from + ","+ boombot.misc.roll[randomRoll]);
@@ -1264,7 +1269,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" + data.from + ","+ boombot.misc.roll[randomRoll]);
+                                    API.sendChat("@"+ data.from +" You rolled a "+ boombot.misc.roll2[randomRoll]);
+                                    setTimeout(function(){
+                                    document.getElementById("woot").click()
+                                    }, 650);
                                     break;
                                 case 1:
                                     API.sendChat("@" + data.from + ","+ boombot.misc.roll[randomRoll]);
@@ -1646,7 +1654,7 @@ botMethods.djAdvanceEvent = function(data){
                     setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }
-        if(boombot.misc.ready || mubBot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
+        if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("fuck you bot") !== -1 || msg.indexOf("bot fuck you") !== -1 || msg.indexOf("f u bot") !== -1 || msg.indexOf("bot f u") !== -1 || msg.indexOf("fuhk yuh bot") !== -1 || msg.indexOf("bot fuhk you") !== -1){
                 var FuckMsg = ["Nah.. I don't need another fuck after giving your mom one last night.","</input fuck> Jk... Fuck you too","< Test fuck >.. Sorry 0% fucks were given by me."];
                 API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
