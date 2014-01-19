@@ -1350,18 +1350,12 @@ botMethods.djAdvanceEvent = function(data){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
                             var randomCookie = Math.floor(Math.random() * boombot.misc.cookie.length);
-                            var randomSentence = Math.floor(Math.random() * 3);
+                            var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                                 case 1:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
-                                    break;
-                                case 2:
-                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
-                                    break;
-                                case 3:
                                     API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                             }
@@ -1371,10 +1365,10 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    API.sendChat("@" +botMethods.command[1]+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                                 case 1:
-                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
+                                    API.sendChat("@" +botMethods.command[1]+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
                                     break;
                             }
                         }
