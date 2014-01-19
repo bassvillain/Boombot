@@ -380,8 +380,8 @@ function listener(data)
         return;
     }
  
-    var title = data.media.title;
-    var author = data.media.author;
+    var title = API.getMedia().title;
+    var author = API.getMedia().author;
     for (var i = 0; i < blockedSongs.length; i++)
     {
         if (title.indexOf(blockedSongs[i]) != -1 || author.indexOf(blockedArtists[i]) != -1)
