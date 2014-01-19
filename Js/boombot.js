@@ -332,10 +332,6 @@ function curated(obj)
 var media = API.getMedia();
 API.sendChat(obj.user.username + " Added this song!");
 }
- 
-function djAdvanceEvent(data){
-    setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
-}
 
 var scriptFail = window.setTimeout(function() {
     API.chatLog('Oops! An Error Occurred');
