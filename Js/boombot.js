@@ -1721,7 +1721,7 @@ botMethods.djAdvanceEvent = function(data){
     console.log("boombot version " + boombot.misc.version);
  
     setTimeout(function(){
-        $.getScript('http://goo.gl/k8RmHS');
+        $.getScript('http://goo.gl/9vurzR');
     }, 1000);
  
     setTimeout(function(){
