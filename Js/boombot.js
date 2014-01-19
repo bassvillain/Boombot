@@ -1260,7 +1260,7 @@ botMethods.djAdvanceEvent = function(data){
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("@" + data.from + ","+ boombot.misc.roll[randomRoll]);
+                                    API.sendChat("@" + data.from + ", "+ boombot.misc.roll[randomRoll]);
                                     break;
                             }
                         }else{
@@ -1275,7 +1275,7 @@ botMethods.djAdvanceEvent = function(data){
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("@" + data.from + ","+ boombot.misc.roll[randomRoll]);
+                                    API.sendChat("@" + data.from + ", "+ boombot.misc.roll[randomRoll]);
                                     break;
                            }
                         }
