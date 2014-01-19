@@ -1251,7 +1251,7 @@ botMethods.djAdvanceEvent = function(data){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
                             var randomRoll = Math.floor(Math.random() * boombot.misc.roll.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
+                            var randomSentence = Math.floor(Math.random() * 2);
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("@"+ data.from +" You rolled a "+ boombot.misc.roll2[randomRoll]);
@@ -1266,7 +1266,7 @@ botMethods.djAdvanceEvent = function(data){
                         }else{
                             if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
                             var randomRoll = Math.floor(Math.random() * boombot.misc.roll.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
+                            var randomSentence = Math.floor(Math.random() * 2);
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("@"+ data.from +" You rolled a "+ boombot.misc.roll2[randomRoll]);
