@@ -35,6 +35,8 @@
  *
  */
  
+ 
+ 
 var boombot = {};
 var ruleSkip = {};
 boombot.misc = {};
@@ -1177,15 +1179,6 @@ botMethods.djAdvanceEvent = function(data){
             }
             if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1){
                 switch(command[0].toLowerCase()){
-                 
-                case "punish":
-                     if(typeof command[1] == "@"){
-
-
-var JoinMsg = ["Yo waddup @user","Sup yo! @user","Welcome to The Boombox mate! @user","Aye mate! @user","Yo @user"];
-r = Math.floor(Math.random() * JoinMsg.length);
-API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and have fun!");
-}
  
                 case "punish":
                         if(typeof command[1] == "@"){
@@ -1194,26 +1187,26 @@ API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and 
                             var randomSentence = Math.floor(Math.random() * 6);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("/me rubs sandpaper on  "+command[1]+"'s scrotum");
+                                    API.sendChat("/me rubs sandpaper on @"+botMethods.cleanString(command[1])+"'s scrotum");
                                     break;
                                 case 1:
-                                    API.sendChat("/me penetrates  "+command[1]+" with a sharpie");
+                                    API.sendChat("/me penetrates @"+botMethods.cleanString(command[1])+" with a sharpie");
                                     break;
                                 case 2:
-                                    API.sendChat("/me pokes "+command[1]+" in the eyes");
+                                    API.sendChat("/me pokes @"+botMethods.cleanString(command[1])+" in the eyes");
                                     break;
                                 case 3:
-                                    API.sendChat("/me makes  "+command[1]+"'s mother cry");
+                                    API.sendChat("/me makes @"+botMethods.cleanString(command[1])+"'s mother cry");
                                     break;
                                 case 4:
-                                    API.sendChat("/me pinches  "+command[1]+"'s nipples super hard");
+                                    API.sendChat("/me pinches @"+botMethods.cleanString(command[1])+"'s nipples super hard");
                                     break;
                                 case 5:
-                                    API.sendChat("/me gives  "+command[1]+" a wet willy");
+                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a wet willy");
                                     break;
  
                                 case 6:
-                                    API.sendChat("/me Sets  "+command[1]+" hair on fire");
+                                    API.sendChat("/me Sets @"+botMethods.cleanString(command[1])+" hair on fire");
                                     break;
                             }
                         }else{
@@ -1221,26 +1214,26 @@ API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and 
                             var randomSentence = Math.floor(Math.random() * 6);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("/me rubs sandpaper on  "+command[1]+"'s scrotum");
+                                    API.sendChat("/me rubs sandpaper on @"+botMethods.cleanString(command[1])+"'s scrotum");
                                     break;
                                 case 1:
-                                    API.sendChat("/me penetrates  "+command[1]+" with a sharpie");
+                                    API.sendChat("/me penetrates @"+botMethods.cleanString(command[1])+" with a sharpie");
                                     break;
                                 case 2:
-                                    API.sendChat("/me pokes  "+command[1]+" in the eyes");
+                                    API.sendChat("/me pokes @"+botMethods.cleanString(command[1])+" in the eyes");
                                     break;
                                 case 3:
-                                    API.sendChat("/me makes  "+command[1]+"'s mother cry");
+                                    API.sendChat("/me makes @"+botMethods.cleanString(command[1])+"'s mother cry");
                                     break;
                                 case 4:
-                                    API.sendChat("/me pinches  "+command[1]+"'s nipples super hard");
+                                    API.sendChat("/me pinches @"+botMethods.cleanString(command[1])+"'s nipples super hard");
                                     break;
                                 case 5:
-                                    API.sendChat("/me gives  "+command[1]+" a wet willy");
+                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a wet willy");
                                     break;
  
                                 case 6:
-                                    API.sendChat("/me Sets  "+command[1]+" hair on fire");
+                                    API.sendChat("/me Sets @"+botMethods.cleanString(command[1])+" hair on fire");
                                     break;
                             }
                         }
@@ -1357,12 +1350,18 @@ API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and 
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
                             var randomCookie = Math.floor(Math.random() * boombot.misc.cookie.length);
-                            var randomSentence = Math.floor(Math.random() * 1);
+                            var randomSentence = Math.floor(Math.random() * 3);
                             switch(randomSentence){
                                 case 0:
                                     API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                                 case 1:
+                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    break;
+                                case 2:
+                                    API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
+                                    break;
+                                case 3:
                                     API.sendChat("@" +crowd[randomUser].username+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                             }
@@ -1372,10 +1371,10 @@ API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and 
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat(command[1]+", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie]+ ". Enjoy!");
                                     break;
                                 case 1:
-                                    API.sendChat(command[1]+", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
+                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + boombot.misc.cookie[randomCookie] + ". Enjoy!");
                                     break;
                             }
                         }
@@ -1416,17 +1415,17 @@ API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and 
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+botMethods.(command[1])+"'s ass");
+                                        API.sendChat("/me grabs @"+botMethods.cleanString(command[1])+"'s ass");
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("/me gives @"+botMethods.(command[1])+" a big bear hug");
+                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a big bear hug");
                                     break;
                                 case 2:
-                                    API.sendChat("/me gives @"+botMethods.(command[1])+" a soft, furry hug");
+                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a soft, furry hug");
                                     break;
                                 case 3:
-                                    API.sendChat("/me gives @"+botMethods.(command[1])+" an awkward hug");
+                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" an awkward hug");
                                     break;
                             }
                         }
