@@ -1409,7 +1409,7 @@ botMethods.djAdvanceEvent = function(data){
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy faggot..");
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy.");
                                     break;
                             }
                         }
