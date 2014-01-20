@@ -1388,10 +1388,13 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 2);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    API.sendChat("Aye kid want some weed?");
+                                    setTimeout(function(){
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy faggot..");
+                                    }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy faggot..");
                                     break;
                             }
                         }else{
@@ -1400,10 +1403,13 @@ botMethods.djAdvanceEvent = function(data){
                             var randomSentence = Math.floor(Math.random() * 2);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    API.sendChat("Aye kid want some weed?");
+                                    setTimeout(function(){
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy!");
+                                    }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy faggot..");
                                     break;
                             }
                         }
