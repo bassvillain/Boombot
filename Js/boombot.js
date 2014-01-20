@@ -1390,7 +1390,7 @@ botMethods.djAdvanceEvent = function(data){
                                 case 0:
                                     API.sendChat("Aye kid want some weed?");
                                     setTimeout(function(){
-                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy faggot..");
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" to @"+command[1]+" Enjoy!");
                                     }, 650);
                                     break;
                                 case 1:
