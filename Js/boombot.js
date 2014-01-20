@@ -1501,7 +1501,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         if(boombot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             boombot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;   
                         
