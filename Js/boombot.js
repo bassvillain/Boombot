@@ -489,6 +489,16 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                    case "weed":
+                        if(API.getUser(fromID).permission < 2 || boombot.admins.indexOf(fromID) > -1){
+                            var weedMsg = ["Take this weed @user"];
+                            r = Math.floor(Math.random() * weedMsg.length);
+                            API.sendChat(weedMsg[r].replace("user", command[1]);
+                            boombot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                        }
+                        break;
                     
                     case "flipcoin":
                         if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
