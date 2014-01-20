@@ -492,11 +492,13 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "weed":
                         if(API.getUser(fromID).permission < 2 || boombot.admins.indexOf(fromID) > -1){
+                         if(typeof command[1] === "undefined"){
                             var weedMsg = ["Take this weed @user"];
                             r = Math.floor(Math.random() * weedMsg.length);
                             API.sendChat(weedMsg[r].replace("user", command[1]);
                             boombot.misc.ready = false;
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                         }
                         }
                         break;
                     
