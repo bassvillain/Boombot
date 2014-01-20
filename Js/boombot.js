@@ -869,28 +869,24 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "meh":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
                            API.sendChat("Bummer, A meh has been requested!!");
                         setTimeout(function(){
                            document.getElementById("meh").click()
                         }, 650);
                         }else{
                            API.sendChat("This command requires bouncer +");
-                        }
                     }
                         break;
  
                     case "woot":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
                            API.sendChat("One woot coming up!");
                         setTimeout(function(){
                            document.getElementById("woot").click()
                         }, 650);
                         }else {
                            API.sendChat("This command requires bouncer +");
-                        }
-                    }
+                     }
                         break;
                    
                     case "join":
