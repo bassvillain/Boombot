@@ -1507,7 +1507,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(typeof command[1] == "undefined"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
-                            var randomCatfact = Math.floor(Math.random() * mubBot.misc.catfact.length);
+                            var randomCatfact = Math.floor(Math.random() * boombot.misc.catfact.length);
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
