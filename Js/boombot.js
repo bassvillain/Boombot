@@ -124,7 +124,7 @@ var blockedArtists = [
 ];
 
 
-boombot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
+boombot.misc.weed = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
  
 boombot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
 
@@ -490,18 +490,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "weed":
-                        if(API.getUser(fromID).permission < 2 || boombot.admins.indexOf(fromID) > -1){
-                         if(typeof command[1] === "undefined"){
-                            var weedMsg = ["Take this weed @user"];
-                            r = Math.floor(Math.random() * weedMsg.length);
-                            API.sendChat(weedMsg[r].replace("user", command[1]);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
-                         }
-                        }
-                        break;
-                    
                     case "flipcoin":
                         if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
                         var FlipMsg = ["My magic coins says: Tails", "My magic coin says: Heads"];
@@ -1390,6 +1378,40 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                        
+                     case "weed":
+                        if(typeof command[1] == "@"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomWeed = Math.floor(Math.random() * boombot.misc.weed.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    break;
+                                case 1:
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomWeed = Math.floor(Math.random() * boombot.misc.weed.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    break;
+                                case 1:
+                                    API.sendChat("Gives "+boombot.misc.weed[randomWeed]+" To @"+command[1]+" Enjoy faggot..");
+                                    break;
+                            }
+                        }
+                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            boombot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                        }
+                        break;   
                        
                     case "hug":
                         if(typeof command[1] == "@"){
