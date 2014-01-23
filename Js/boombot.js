@@ -1159,7 +1159,7 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "off":
+                    case "die":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
                             API.sendChat("Unhooking API's...");
                         setTimeout(function(){
