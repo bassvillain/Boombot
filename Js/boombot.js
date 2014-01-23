@@ -1146,29 +1146,17 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                         
-                    case "reload":
-                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
-                            API.sendChat("Bot now reloading");
-                            inti();
-                            setTimeout(function(){
-                            API.sendChat("Bot now online");
-                            undo();
-                            }, 650);
-                        }else{
-                             API.sendChat("This command requires Bouncer+ only!");
-                        }
-                        break;
-                        
                     case "die":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
                             API.sendChat("Unhooking API's...");
+                            undo();
                         setTimeout(function(){
                             API.sendChat('Deleting bot data...');
                         }, 650);
+                            turnoff();
                         setTimeout(function(){
                             API.sendChat('Consider me dead');
-                        }, 650);
-                            undo();
+                        }, 1000);
                         }else{
                              API.sendChat("This command requires Bouncer+ only!");
                         }
@@ -1795,5 +1783,15 @@ botMethods.djAdvanceEvent = function(data){
             client_id: 'eae62c8e7a30564e9831b9e43f1d484a'
         });
     }, 3000);
+ 
+   function turnoff ()
+   {
+   API.off(API.DJ_ADVANCE, djAdvanceEvent);
+   API.off(API.USER_JOIN, UserJoin);
+   API.off(API.VOTE_SKIP, SKIP);
+   API.off(API.DJ_ADVANCE, listener);
+   API.off(API.CURATE_UPDATE, curated);
+   API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+   }
  
     API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
