@@ -91,6 +91,9 @@ boombot.settings.racismFilter = true;
 boombot.settings.beggerFilter = false;
 boombot.settings.interactive = false;
 boombot.settings.removedFilter = false;
+boombot.misc.lockSkipping = false;
+boombot.misc.ready = true;
+cancel = false;
 }
 
 function undo(){
@@ -102,6 +105,9 @@ boombot.settings.racismFilter = false;
 boombot.settings.beggerFilter = true;
 boombot.settings.interactive = true;
 boombot.settings.removedFilter = true;
+boombot.misc.lockSkipping = true;
+boombot.misc.ready = false;
+cancel = true;
 }
 
 
@@ -1149,11 +1155,11 @@ botMethods.djAdvanceEvent = function(data){
                     case "die":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
                             API.sendChat("Unhooking API's...");
-                            undo();
+                            turnoff();
                         setTimeout(function(){
                             API.sendChat('Deleting bot data...');
                         }, 650);
-                            turnoff();
+                            undo();
                         setTimeout(function(){
                             API.sendChat('Consider me dead');
                         }, 1000);
