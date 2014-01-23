@@ -50,7 +50,7 @@ toSave = {};
 toSave.settings = boombot.settings;
 toSave.moderators = boombot.moderators;
  
-boombot.misc.version = "1.0.25";
+boombot.misc.version = "1.0.20";
 boombot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 boombot.misc.changelog = "Added a secondary check for history";
 boombot.misc.ready = true;
@@ -81,37 +81,7 @@ boombot.settings.racismFilter = false;
 boombot.settings.beggerFilter = true;
 boombot.settings.interactive = true;
 boombot.settings.removedFilter = true;
-
-function inti (){
-boombot.settings.staffMeansAccess = false;
-boombot.settings.historyFilter = false;
-boombot.settings.swearFilter = true;
-boombot.settings.commandFilter = false;
-boombot.settings.racismFilter = true;
-boombot.settings.beggerFilter = false;
-boombot.settings.interactive = false;
-boombot.settings.removedFilter = false;
-boombot.misc.lockSkipping = false;
-boombot.misc.ready = true;
-cancel = false;
-}
-
-function undo(){
-boombot.settings.staffMeansAccess = true;
-boombot.settings.historyFilter = true;
-boombot.settings.swearFilter = false;
-boombot.settings.commandFilter = true;
-boombot.settings.racismFilter = false;
-boombot.settings.beggerFilter = true;
-boombot.settings.interactive = true;
-boombot.settings.removedFilter = true;
-boombot.misc.lockSkipping = true;
-boombot.misc.ready = false;
-cancel = true;
-}
-
-
-
+ 
 //Admins                [Dj-Neon-TFL]               [bassvillain]
 boombot.admins = ["50aeaeb6c3b97a2cb4c25bd2","50aeaeb8d6e4a94f77470a11"];
  
@@ -1151,23 +1121,7 @@ botMethods.djAdvanceEvent = function(data){
                             boombot.settings.interactive ? API.sendChat("Bot is interactive.") : API.sendChat("Bot is not interactive.");
                         }
                         break;
-                        
-                    case "die":
-                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
-                            API.sendChat("Unhooking API's...");
-                            turnoff();
-                        setTimeout(function(){
-                            API.sendChat('Deleting bot data...');
-                        }, 650);
-                            undo();
-                        setTimeout(function(){
-                            API.sendChat('Consider me dead');
-                        }, 1000);
-                        }else{
-                             API.sendChat("This command requires Bouncer+ only!");
-                        }
-                        break;
-
+ 
                     case "toggleinteractive":
                     case "ti":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
@@ -1789,15 +1743,5 @@ botMethods.djAdvanceEvent = function(data){
             client_id: 'eae62c8e7a30564e9831b9e43f1d484a'
         });
     }, 3000);
- 
-   function turnoff ()
-   {
-   API.off(API.DJ_ADVANCE, djAdvanceEvent);
-   API.off(API.USER_JOIN, UserJoin);
-   API.off(API.VOTE_SKIP, SKIP);
-   API.off(API.DJ_ADVANCE, listener);
-   API.off(API.CURATE_UPDATE, curated);
-   API.off(API.DJ_ADVANCE, DJ_ADVANCE);
-   }
  
     API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
