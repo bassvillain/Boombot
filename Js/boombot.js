@@ -1731,7 +1731,27 @@ botMethods.djAdvanceEvent = function(data){
         cancel = false;
     }
  
- 
+    function turnon()
+    {
+    API.on(API.DJ_ADVANCE, djAdvanceEvent);
+    API.on(API.USER_JOIN, UserJoin);
+    API.on(API.VOTE_SKIP, SKIP);
+   API.on(API.DJ_ADVANCE, listener);
+   API.on(API.CURATE_UPDATE, curated);
+   API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+   }
+
+
+   function turnoff()
+   {
+   API.off(API.DJ_ADVANCE, djAdvanceEvent);
+   API.off(API.USER_JOIN, UserJoin);
+   API.off(API.VOTE_SKIP, SKIP);
+   API.off(API.DJ_ADVANCE, listener);
+   API.off(API.CURATE_UPDATE, curated);
+   API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+   }
+    
     botMethods.loadStorage();
     console.log("boombot version " + boombot.misc.version);
  
