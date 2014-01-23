@@ -1736,10 +1736,10 @@ botMethods.djAdvanceEvent = function(data){
     API.on(API.DJ_ADVANCE, djAdvanceEvent);
     API.on(API.USER_JOIN, UserJoin);
     API.on(API.VOTE_SKIP, SKIP);
-   API.on(API.DJ_ADVANCE, listener);
-   API.on(API.CURATE_UPDATE, curated);
-   API.on(API.DJ_ADVANCE, DJ_ADVANCE);
-   }
+    API.on(API.DJ_ADVANCE, listener);
+    API.on(API.CURATE_UPDATE, curated);
+    API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+    }
 
 
    function turnoff()
