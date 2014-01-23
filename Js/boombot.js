@@ -1150,13 +1150,30 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
                             API.sendChat("Bot now reloading");
                             inti();
+                            setTimeout(function(){
                             API.sendChat("Bot now online");
+                            undo();
+                            }, 650);
+                        }else{
+                             API.sendChat("This command requires Bouncer+ only!");
+                        }
+                        break;
+                        
+                    case "off":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
+                            API.sendChat("Unhooking API's...");
+                        setTimeout(function(){
+                            API.sendChat('Deleting bot data...');
+                        }, 650);
+                        setTimeout(function(){
+                            API.sendChat('Consider me dead');
+                        }, 650);
                             undo();
                         }else{
                              API.sendChat("This command requires Bouncer+ only!");
                         }
                         break;
- 
+
                     case "toggleinteractive":
                     case "ti":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
