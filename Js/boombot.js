@@ -50,7 +50,7 @@ toSave = {};
 toSave.settings = boombot.settings;
 toSave.moderators = boombot.moderators;
  
-boombot.misc.version = "1.0.20";
+boombot.misc.version = "1.0.25";
 boombot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 boombot.misc.changelog = "Added a secondary check for history";
 boombot.misc.ready = true;
