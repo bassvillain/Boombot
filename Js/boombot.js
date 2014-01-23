@@ -96,7 +96,7 @@ boombot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls",
 
 
 var announcements = [
-""
+"Hey man, we're doing a jazz session! Go pick your favorite jazzy hip hop tracks or instrumentals and have fun!"
 ];
 
 
