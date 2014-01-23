@@ -81,7 +81,31 @@ boombot.settings.racismFilter = false;
 boombot.settings.beggerFilter = true;
 boombot.settings.interactive = true;
 boombot.settings.removedFilter = true;
- 
+
+function inti (){
+boombot.settings.staffMeansAccess = false;
+boombot.settings.historyFilter = false;
+boombot.settings.swearFilter = true;
+boombot.settings.commandFilter = false;
+boombot.settings.racismFilter = true;
+boombot.settings.beggerFilter = false;
+boombot.settings.interactive = false;
+boombot.settings.removedFilter = false;
+}
+
+function undo(){
+boombot.settings.staffMeansAccess = true;
+boombot.settings.historyFilter = true;
+boombot.settings.swearFilter = false;
+boombot.settings.commandFilter = true;
+boombot.settings.racismFilter = false;
+boombot.settings.beggerFilter = true;
+boombot.settings.interactive = true;
+boombot.settings.removedFilter = true;
+}
+
+
+
 //Admins                [Dj-Neon-TFL]               [bassvillain]
 boombot.admins = ["50aeaeb6c3b97a2cb4c25bd2","50aeaeb8d6e4a94f77470a11"];
  
@@ -1124,11 +1148,10 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "reload":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
-                            API.sendChat("Bot now reloading")
-                            turnoff()
-                            setTimeout(function(){
-                            turnon()
-                            }, 650);
+                            API.sendChat("Bot now reloading");
+                            inti();
+                            API.sendChat("Bot now online");
+                            undo();
                         }else{
                              API.sendChat("This command requires Bouncer+ only!");
                         }
@@ -1757,27 +1780,3 @@ botMethods.djAdvanceEvent = function(data){
     }, 3000);
  
     API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
-    
-    
-    function turnon ()
-    {
-    API.on(API.DJ_ADVANCE, djAdvanceEvent);
-    API.on(API.USER_JOIN, UserJoin);
-    API.on(API.VOTE_SKIP, SKIP);
-    API.on(API.DJ_ADVANCE, listener);
-    API.on(API.CURATE_UPDATE, curated);
-    API.on(API.DJ_ADVANCE, DJ_ADVANCE);
-    API.on(API.CHAT);
-    }
-
-
-   function turnoff ()
-   {
-   API.off(API.DJ_ADVANCE, djAdvanceEvent);
-   API.off(API.USER_JOIN, UserJoin);
-   API.off(API.VOTE_SKIP, SKIP);
-   API.off(API.DJ_ADVANCE, listener);
-   API.off(API.CURATE_UPDATE, curated);
-   API.off(API.DJ_ADVANCE, DJ_ADVANCE);
-   API.off(API.CHAT);
-   }
