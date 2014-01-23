@@ -1121,6 +1121,18 @@ botMethods.djAdvanceEvent = function(data){
                             boombot.settings.interactive ? API.sendChat("Bot is interactive.") : API.sendChat("Bot is not interactive.");
                         }
                         break;
+                        
+                    case "reload":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
+                            API.sendChat("Bot now reloading")
+                            turnoff()
+                            setTimeout(function(){
+                            turnon()
+                            }, 650);
+                        }else{
+                             API.sendChat("This command requires Bouncer+ only!");
+                        }
+                        break;
  
                     case "toggleinteractive":
                     case "ti":
@@ -1731,7 +1743,7 @@ botMethods.djAdvanceEvent = function(data){
         cancel = false;
     }
  
-    function turnon()
+    function turnon ()
     {
     API.on(API.DJ_ADVANCE, djAdvanceEvent);
     API.on(API.USER_JOIN, UserJoin);
@@ -1742,7 +1754,7 @@ botMethods.djAdvanceEvent = function(data){
     }
 
 
-   function turnoff()
+   function turnoff ()
    {
    API.off(API.DJ_ADVANCE, djAdvanceEvent);
    API.off(API.USER_JOIN, UserJoin);
