@@ -50,7 +50,7 @@ toSave = {};
 toSave.settings = boombot.settings;
 toSave.moderators = boombot.moderators;
  
-boombot.misc.version = "1.0.20";
+boombot.misc.version = "1.0.22";
 boombot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 boombot.misc.changelog = "Added a secondary check for history";
 boombot.misc.ready = true;
@@ -690,26 +690,22 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "residentdj":
                     case "residentdjs":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getStaff().permission > 2){
+                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Resident DJs have no moderation privileges but their name will appear in the chat the same color as the community staff.");
                          setTimeout(function(){
                             API.sendChat("This role is usually given to artists, promoters or friends of the Community Staff to make the person stand out from the crowd. Resident DJs can, however, join an empty DJ booth.");
                          }, 650);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
                         
                         
                     case "bouncer":
                     case "bouncers":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getStaff().permission > 2){
+                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Bouncers are people you trust to maintain order in the community, and a community can have an unlimited number of Bouncers. They can add/remove DJs, force skip, ban people from the community and delete offensive chat messages.");
                          setTimeout(function(){
                             API.sendChat("Bouncers cannot create other bouncers.");
                          }, 650);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
                         
@@ -720,8 +716,6 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){
                             API.sendChat("The Wait List, toggle DJ cycling, etc.) and perform all the other moderation actions.");
                          }, 650);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
                         
@@ -732,8 +726,6 @@ botMethods.djAdvanceEvent = function(data){
                          setTimeout(function(){
                             API.sendChat("description, as well as the community rules and can perform all of the normal moderation actions such as force skip a DJ, ban a person from the community, delete inappropriate chat messages, and move people in the Wait List as well as add/remove them.");
                          }, 650);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
                         
@@ -745,8 +737,6 @@ botMethods.djAdvanceEvent = function(data){
                          setTimeout(function(){
                             API.sendChat(" general questions you may have. Brand Ambassadors will have a green microphone next to their name in chat. They are there to assist you.");
                          }, 650);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
  
