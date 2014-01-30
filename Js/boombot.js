@@ -524,7 +524,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "residentdj":
                     case "residentdjs":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Resident DJs have no moderation privileges but their name will appear in the chat the same color as the community staff.");
                          setTimeout(function(){
                             API.sendChat("This role is usually given to artists, promoters or friends of the Community Staff to make the person stand out from the crowd. Resident DJs can, however, join an empty DJ booth.");
@@ -535,7 +535,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "bouncer":
                     case "bouncers":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Bouncers are people you trust to maintain order in the community, and a community can have an unlimited number of Bouncers. They can add/remove DJs, force skip, ban people from the community and delete offensive chat messages.");
                          setTimeout(function(){
                             API.sendChat("Bouncers cannot create other bouncers.");
@@ -545,7 +545,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "manager":
                     case "managers":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("There is currently a limit of 10 managers per community. Managers cannot add other managers; they can only add bouncers. Managers cannot change the community name or description, but they can change the community settings like disable/enable");
                             setTimeout(function(){
                             API.sendChat("The Wait List, toggle DJ cycling, etc.) and perform all the other moderation actions.");
@@ -555,7 +555,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "host":
                     case "hosts":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("A Host is the person who created the community. Hosts can create co-hosts (up to 2 currently). Hosts and co-hosts have the same privileges except that co-hosts cannot create other co-hosts. Hosts and co-hosts can change the community name and");
                          setTimeout(function(){
                             API.sendChat("description, as well as the community rules and can perform all of the normal moderation actions such as force skip a DJ, ban a person from the community, delete inappropriate chat messages, and move people in the Wait List as well as add/remove them.");
@@ -566,7 +566,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "ba":
                     case "brandambassador":
                     case "ambassador":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Brand Ambassadors have all of the same abilities of Managers, except their privileges extend across all of the communities on plug.dj. Brand Ambassadors are a good resource for answering");
                          setTimeout(function(){
                             API.sendChat(" general questions you may have. Brand Ambassadors will have a green microphone next to their name in chat. They are there to assist you.");
