@@ -715,7 +715,7 @@ botMethods.djAdvanceEvent = function(data){
                         
                     case "manager":
                     case "managers":
-                        if(boombot.admins.indexOf(fromID) > -1 || API.getStaff().permission > 3){
+                        if(boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("There is currently a limit of 10 managers per community. Managers cannot add other managers; they can only add bouncers. Managers cannot change the community name or description, but they can change the community settings like disable/enable");
                             setTimeout(function(){
                             API.sendChat("The Wait List, toggle DJ cycling, etc.) and perform all the other moderation actions.");
