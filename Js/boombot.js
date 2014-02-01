@@ -950,7 +950,7 @@ botMethods.djAdvanceEvent = function(data){
  
                     case "commandfilter":
                     case "cf":
-                        if(mubBot.admins.indexOf(fromID) > -1) boombot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
+                        if(boombot.admins.indexOf(fromID) > -1) boombot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
                         botMethods.save();
                         break;
  
