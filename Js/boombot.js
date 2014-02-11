@@ -111,6 +111,7 @@ var blockedSongs = [
  
 var blockedArtists = [
     "Rick Astley",
+    "Rick Ross",
     "Miley Cyrus",
     "Justin bieber",
     "Rebbeca black",
