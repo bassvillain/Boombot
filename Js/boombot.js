@@ -95,9 +95,8 @@ boombot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls",
  
 
 
-var announcements = [
-""
-];
+var announcements = 
+[""];
 
 
 
