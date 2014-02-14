@@ -324,7 +324,7 @@ $('#woot').click();
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-var JoinMsg = ["Happy valentines @user"/*,"Sup yo! @user","Welcome to The Boombox mate! @user","Aye mate! @user","Yo @user"*/];
+var JoinMsg = ["Happy valentines @user","Welcome to The Boombox mate and happy valentines day! @user"/*,"Sup yo! @user","Aye mate! @user","Yo @user"*/];
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and have fun!");
 }
