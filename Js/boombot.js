@@ -124,7 +124,7 @@ var blockedArtists = [
     "Jay Z",
     "Lil wayne",
     "Tyga",
-    "Madcon"
+    "Madcon",
     "Eminem"
 ];
 
