@@ -38,7 +38,7 @@
  */
  
  
-(function(){
+
 if(window.location.href === "http://plug.dj/"+lobby+"/"){
 var boombot = {};
 var ruleSkip = {};
