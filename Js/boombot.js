@@ -37,10 +37,6 @@
  *
  */
  
- 
-
-if(window.location.href === "http://plug.dj/theboombox/"){
-
 var boombot = {};
 var ruleSkip = {};
 boombot.misc = {};
@@ -64,6 +60,7 @@ boombot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
+var lobby = "theboombox";
  
 joined = new Date().getTime();
  
@@ -316,7 +313,8 @@ boombot.pubVars.skipOnExceed;
 boombot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
- 
+if(window.location.href === "http://plug.dj/"+lobby+"/"){
+
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 
 API.on(API.DJ_ADVANCE, woot);
@@ -1749,5 +1747,5 @@ botMethods.djAdvanceEvent = function(data){
  
     API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
 }else{
-   API.sendChat("This bot cannot be function in this lobby! Now alerting Author and Admins!");
+   API.sendChat("This bot cannot be function in this lobby! Now alerting Socket...");
 };
