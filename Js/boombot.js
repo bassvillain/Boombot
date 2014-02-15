@@ -39,7 +39,8 @@
  
  
 
-if(window.location.href === "http://plug.dj/"+lobby+"/"){
+if(window.location.href === "http://plug.dj/theboombox/"){
+
 var boombot = {};
 var ruleSkip = {};
 boombot.misc = {};
@@ -63,8 +64,6 @@ boombot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
-var lobby = "theboombox";
-
  
 joined = new Date().getTime();
  
