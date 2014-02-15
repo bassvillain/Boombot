@@ -37,6 +37,9 @@
  *
  */
  
+ 
+(function(){
+if(window.location.href === "http://plug.dj/"+lobby+"/"){
 var boombot = {};
 var ruleSkip = {};
 boombot.misc = {};
@@ -60,6 +63,7 @@ boombot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
+var lobby = "theboombox";
 
  
 joined = new Date().getTime();
@@ -1745,3 +1749,6 @@ botMethods.djAdvanceEvent = function(data){
     }, 3000);
  
     API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
+}else{
+ API.sendCha("This bot cannot be function in this lobby! Now alerting Author and Admins!");
+};
