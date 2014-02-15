@@ -314,32 +314,30 @@ boombot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 if(window.location.href === "http://plug.dj/"+lobby+"/"){
-
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
-
 API.on(API.DJ_ADVANCE, woot);
+API.on(API.USER_JOIN, UserJoin);
+API.on(API.VOTE_SKIP, SKIP);
+API.on(API.DJ_ADVANCE, listener);
+API.on(API.CURATE_UPDATE, curated);
+API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 function woot(){
 $('#woot').click();
 } 
-
-API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
-var JoinMsg = ["Happy valentines @user","Welcome to The Boombox mate and happy valentines day! @user"/*,"Sup yo! @user","Aye mate! @user","Yo @user"*/];
+var JoinMsg = ["Sup bro! @user","Welcome to The Boombox mate! @user","Sup yo! @user","Aye mate! @user","Yo @user"];
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and have fun!");
 }
  
-API.on(API.VOTE_SKIP, SKIP);
 function SKIP() {
 var SkipMsg = ["Yo man don't play the shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
 API.sendChat(SkipMsg[Math.floor(Math.random() * SkipMsg.length)]);
 }
  
-API.on(API.DJ_ADVANCE, listener);
 window.setInterval(sendAnnouncement, 1000 * announcementTick);
  
-API.on(API.CURATE_UPDATE, curated);
 function curated(obj)
 {
 var media = API.getMedia();
@@ -1720,7 +1718,6 @@ botMethods.djAdvanceEvent = function(data){
         }
     });
  
-    API.on(API.DJ_ADVANCE, DJ_ADVANCE);
     function DJ_ADVANCE(data){
         $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
         setTimeout(function(){
