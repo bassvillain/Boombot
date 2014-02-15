@@ -1749,5 +1749,5 @@ botMethods.djAdvanceEvent = function(data){
  
     API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
 }else{
- API.sendChat("This bot cannot be function in this lobby! Now alerting Author and Admins!");
+   API.sendChat("This bot cannot be function in this lobby! Now alerting Author and Admins!");
 };
