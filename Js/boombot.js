@@ -33,8 +33,7 @@
  
  
  * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING ANY PART OF THIS SCRIPT AND 
- *         USING "IT" or "AS" (yours without Authors permission) WELL SERIOUSLY, 
- *         GET YOU TO FACE THE CONSEQUENCES!
+ *         USING "IT" or "AS" (yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
  *
  */
  
