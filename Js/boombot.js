@@ -33,7 +33,8 @@
  
  
  * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING ANY PART OF THIS SCRIPT AND 
- *         USING "IT" or "AS" (yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
+ *         USING "IT" or "AS" (yours without Authors permission) WELL SERIOUSLY, 
+ *         GET YOU TO FACE THE CONSEQUENCES!
  *
  */
  
@@ -323,7 +324,7 @@ API.on(API.CURATE_UPDATE, curated);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 function woot(){
 $('#woot').click();
-} 
+}
 function UserJoin(user)
 {
 var JoinMsg = ["Sup bro! @user","Welcome to The Boombox mate! @user","Sup yo! @user","Aye mate! @user","Yo @user"];
@@ -1639,8 +1640,6 @@ botMethods.djAdvanceEvent = function(data){
             if(msg.indexOf('hello bot') !== -1 || msg.indexOf('bot hello') !== -1 || msg.indexOf('hi bot') !== -1 || msg.indexOf('bot hi') !== -1 || msg.indexOf('sup bot') !== -1 || msg.indexOf('bot sup') !== -1 || msg.indexOf('hey bot') !== -1 || msg.indexOf('bot hey') !== -1 || msg.indexOf('howdy bot') !== -1 || msg.indexOf('bot howdy') !== -1 || msg.indexOf('aye bot') !== -1 || msg.indexOf('yo bot') !== -1 || msg.indexOf('waddup bot') !== -1 || msg.indexOf('bot waddup') !== -1){
                 var HelloMsg = ["Hey!","Oh hey there!","Good day sir!","Hi","Howdy!","Waddup!"];
                 API.sendChat("@" + data.from + " " + HelloMsg[Math.floor(Math.random() * HelloMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
             
         }
@@ -1648,48 +1647,36 @@ botMethods.djAdvanceEvent = function(data){
             if(msg.indexOf("what are the rules") !== -1 || msg.indexOf("wat r the rules") !== -1 || msg.indexOf("whats the rules") !== -1){
                 var RulesMsg = ["Rules: 1) Don't replay a song on the room history. 2) If the song has more MEHs than WOOTs, you should skip it. 3) No auto-queue when away from keyboard."];
                 API.sendChat("@" + data.from + " " + RulesMsg[Math.floor(Math.random() * RulesMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }
         if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("how are you bot") !== -1 || msg.indexOf("bot how are you") !== -1 || msg.indexOf("hru bot") !== -1 || msg.indexOf("bot hru") !== -1 || msg.indexOf("doing good bot?") !== -1 || msg.indexOf("bot doing good?") !== -1 || msg.indexOf("hows it going bot") !== -1 || msg.indexOf("bot how is it going") !== -1 || msg.indexOf("how you doing bot") !== -1 || msg.indexOf("bot how you doing") !== -1){
                 var HRUMsg = ["I'm good thanks for asking :)","Doing great yo and yourself?","All Good Mate!","I'm good thanks for asking!","Yeee i'm cool and youself yo?"];
                 API.sendChat("@" + data.from + " " + HRUMsg[Math.floor(Math.random() * HRUMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }
         if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("ty bot") !== -1 || msg.indexOf("bot ty") !== -1 || msg.indexOf("thank you bot") !== -1 || msg.indexOf("bot thank you") !== -1 || msg.indexOf("thanks bot") !== -1 || msg.indexOf("bot thanks") !== -1 || msg.indexOf("thx bot") !== -1 || msg.indexOf("bot thx") !== -1){
                 var TYMsg = ["You're welcome! :D","Your always welcome bro!","No prob man.."];
                 API.sendChat("@" + data.from + " " + TYMsg[Math.floor(Math.random() * TYMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }
         if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("ily bot") !== -1 || msg.indexOf("bot ily") !== -1 || msg.indexOf("i love you bot") !== -1 || msg.indexOf("bot i love you") !== -1 || msg.indexOf("i luv you bot") !== -1 || msg.indexOf("bot i luv you") !== -1 || msg.indexOf("i luv u bot") !== -1 || msg.indexOf("bot i luv u") !== -1 || msg.indexOf("i luv you bot") !== -1 || msg.indexOf("i love you more bot") !== -1){
                 var LoveMsg = ["Fuck yeahh!! :D I love you too baby!","I love you too ;).....   Sex?... JK you don't want this big thing ;)","I love you too o.0","Sweet.. Love you to ;)"];
                 API.sendChat("@" + data.from + " " + LoveMsg[Math.floor(Math.random() * LoveMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }
         if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("fuck you bot") !== -1 || msg.indexOf("bot fuck you") !== -1 || msg.indexOf("f u bot") !== -1 || msg.indexOf("bot f u") !== -1 || msg.indexOf("fuhk yuh bot") !== -1 || msg.indexOf("bot fuhk you") !== -1){
                 var FuckMsg = ["Nah.. I don't need another fuck after giving your mom one last night.","</input fuck> Jk... Fuck you too","< Test fuck >.. Sorry 0% fucks were given by me."];
                 API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }        
         if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
             if(msg.indexOf("son of a bitch bot") !== -1 || msg.indexOf("bot son of a bitch") !== -1 || msg.indexOf("soab bot") !== -1 || msg.indexOf("bot soab") !== -1 || msg.indexOf("son of a biatch bot") !== -1 || msg.indexOf("bot son of a biatch") !== -1){
                 var FuckMsg = ["Nah.. Actually im the son of Bender.","What you just said you no-good, rat-bastard human, die in a fire. :)","< Test fuck >.. Sorry 0% fucks were given by me.","http://stream1.gifsoup.com/webroot/animatedgifs/980837_o.gif"];
                 API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
-                    boombot.misc.ready = false;
-                    setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                 }
         }
         
