@@ -60,7 +60,7 @@ boombot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
-var lobby = "theboombox";
+var lobby = ["theboombox","chill-out-hall"];
  
 joined = new Date().getTime();
  
