@@ -32,8 +32,8 @@
  * @Member:    Ricardo Soares - bassvillain (Owner. of TheBoomBox)
  
  
- * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING ANY PART OF THIS SCRIPT AND 
- *         USING "IT" or "AS" (yours without Authors permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
+ * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING ANY PART OF THIS SCRIPT AND USING "IT" or "AS" 
+ *        (Yours Without Authors Permission) WELL SERIOUSLY GET YOU TO FACE THE CONSEQUENCES!
  *
  */
  
