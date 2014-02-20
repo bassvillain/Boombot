@@ -116,6 +116,7 @@ var blockedArtists = [
     "Rebbeca black",
     "2pac",
     "Wiz Khalifa",
+    "Khalifa"
     "Lil Wayne",
     "Drake",
     "2 Chainz",
