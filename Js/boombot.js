@@ -333,7 +333,7 @@ API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and 
 }
  
 function SKIP() {
-var SkipMsg = ["Yo man don't play the shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
+var SkipMsg = ["Yo man don't play this shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
 API.sendChat(SkipMsg[Math.floor(Math.random() * SkipMsg.length)]);
 }
  
