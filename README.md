@@ -12,7 +12,7 @@ Copyright © 2012-2013 by DJ NEON & Bassvillain.
 
 ° Reports will be made if unauthorized Users are using this script! (Thanks SchyzzSocket) °
 
-[note] DO NOT USE THIS SCRIPT. THIS SCRIPT IS FOR THE BOOMBOX ONLY!
+#### [note] DO NOT USE THIS SCRIPT. THIS SCRIPT IS FOR THE BOOMBOX ONLY!
 
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
  * @Admins:    Ricardo Soares - bassvillain
