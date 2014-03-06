@@ -357,7 +357,7 @@ botMethods.skip = function(){
 
 Funbot.unhook = function(){
     setTimeout(function(){
-    return API.off(API.DJ_ADVANCE, djAdvanceEvent);
+    API.off(API.DJ_ADVANCE, djAdvanceEvent);
     API.off(API.DJ_ADVANCE, woot);
     API.off(API.USER_JOIN, UserJoin);
     API.off(API.VOTE_SKIP, SKIP);
@@ -370,7 +370,7 @@ Funbot.unhook = function(){
 
 Funbot.hook = function(){
     setTimeout(function(){
-    return (function(){$.getScript('http://goo.gl/0it2KW');}());
+    (function(){$.getScript('http://goo.gl/0it2KW');}());
     }, 100);
 };
 
