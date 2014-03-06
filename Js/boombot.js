@@ -537,7 +537,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Hey @"+ data.from +"! I bet you're cute or handsome! Join our facebook group here: http://goo.gl/YOQHB9 ~ Keep in Touch!");
                             boombot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
                         
@@ -598,7 +598,7 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("We're doing a themed day! It's Chill Sunday! Go grab your best chill out tracks and have fun!");
                             boombot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
  
@@ -671,7 +671,7 @@ botMethods.djAdvanceEvent = function(data){
                     case "melimel":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("Error: Username not found.. Do you mean Matt-c?");
-                            mubBot.misc.ready = false;
+                            boombot.misc.ready = false;
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
@@ -1753,7 +1753,7 @@ botMethods.djAdvanceEvent = function(data){
     function DJ_ADVANCE(data){
         $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
         setTimeout(function(){
-            if(typeof response === 'undefined' && data.media.format != 2 && mubBot.settings.removedFilter){
+            if(typeof response === 'undefined' && data.media.format != 2 && boombot.settings.removedFilter){
                 API.sendChat("/me This video may be unavailable!!");
             }
         }, 1500);
