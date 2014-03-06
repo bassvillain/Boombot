@@ -86,20 +86,15 @@ boombot.settings.removedFilter = true;
 boombot.admins = ["50aeaeb6c3b97a2cb4c25bd2","50aeaeb8d6e4a94f77470a11"];
  
 boombot.filters.swearWords = ["slut","mofo","penis","penus","fuck","shit","bitch","cunt","twat","faggot","queer","dumb ass","pussy","dick","cocksucker","asshole","vagina","tit","mangina","tits","cock","jerk","puta","puto","cum","sperm","ass-hat","ass-jabber","assbanger","assfuck","assfucker","assnigger","butt plug","bollox","blowJob","Blow job","bampot","cameltoe","chode","clitfuck","cunt","cracker","dildo","douche","doochbag","dike","dyke","fatass","fat ass","fuckass","fuckbag","fuckboy","fuckbrain","gay","gaylord","handjob","hoe","Jizz","jerk off","kunt","lesbian","lesbo","lezzie","minge","munging","nut sack","nutsack","queer","queef","rimjob","scrote","schlong","titfuck","twat","unclefucker","va-j-j","vajayjay","vjayjay","wankjob","whore"];
- 
-boombot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
- 
+boombot.filters.commandWords = [".reward",".add",".addsong",".flipcoin",".catfact",".dogfact",".hug ",".8ball ",".fortune",".songlink",".download",".help",".whywoot",".whymeh",".props",".votes",".woot",".meh",".say",".version",".userstats @",".mystats",".source",".roomstats",".roomstats2",".register",".join",".leave",".roll"];
 boombot.filters.racistWords = ["nigger","kike","spick","porchmonkey","camel jockey","towelhead","towel head","chink","gook","porch monkey","cracker","Coolie","nigga","nigguh","black shit","black monkey","you ape","you monkey","you gorilla","black ass","assnigger","honkey","White bread","white ass","jungle bunny","niglet","nigaboo","paki","ruski","sand nigger","sandnigger","wetback","wet back"];
- 
 boombot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
  
-
-
+// Random Announcements
 var announcements = 
 [""];
 
-
-
+// Blocked Songs
 var blockedSongs = [
     "Rick Roll",
     "GANGNAM",
@@ -107,7 +102,8 @@ var blockedSongs = [
     "The Fox [Official music video HD]",
     "10 hour"
 ];
- 
+
+// Blocked Artist
 var blockedArtists = [
     "Rick Astley",
     "Rick Ross",
@@ -129,9 +125,8 @@ var blockedArtists = [
     "Eminem"
 ];
 
-
+// BoomBot fun commands
 boombot.misc.weed = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
- 
 boombot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake"];
 
 boombot.misc.ball = [
@@ -351,8 +346,8 @@ function djAdvanceEvent(data){
 
 botMethods.skip = function(){
     setTimeout(function(){
-        API.moderateForceSkip();
-    }, 3500);
+    API.moderateForceSkip();
+    }, 500);
 };
 
 boombot.unhook = function(){
