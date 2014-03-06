@@ -351,10 +351,29 @@ function djAdvanceEvent(data){
 
 botMethods.skip = function(){
     setTimeout(function(){
-        if(!cancel) API.moderateForceSkip();
+        API.moderateForceSkip();
     }, 3500);
 };
- 
+
+botMethods.unhook = function(){
+    setTimeout(function(){
+    return API.off(API.DJ_ADVANCE, djAdvanceEvent);
+    API.off(API.DJ_ADVANCE, woot);
+    API.off(API.USER_JOIN, UserJoin);
+    API.off(API.VOTE_SKIP, SKIP);
+    API.off(API.DJ_ADVANCE, listener);
+    API.off(API.CURATE_UPDATE, curated);
+    API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+    API.off(API.CHAT);
+    }, 100);
+};
+
+botMethods.hook = function(){
+    setTimeout(function(){
+    return (function(){$.getScript('http://goo.gl/0it2KW');}());
+    }, 100);
+};
+
 botMethods.load = function(){
     toSave = JSON.parse(localStorage.getItem("boombotSave"));
     boombot.settings = toSave.settings;
@@ -866,6 +885,37 @@ botMethods.djAdvanceEvent = function(data){
                         }
                     }
                         break;
+                        
+                    case "reload":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
+                           API.sendChat("Now reloading script...");
+                        setTimeout(function(){
+                           botMethods.unhook();
+                        }, 150);
+                        setTimeout(function(){
+                           botMethods.hook();
+                        }, 550);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
+                        break;
+                        
+                    case "die":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
+                           API.sendChat('Unhooking Events...');
+                        setTimeout(function(){
+                           API.sendChat('Deleting bot data...');
+                        }, 150);
+                        setTimeout(function(){
+                           API.sendChat('Consider me dead');
+                        }, 475);
+                        setTimeout(function(){
+                           botMethods.unhook();
+                        }, 700);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
+                        break;    
  
                     case "meh":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
