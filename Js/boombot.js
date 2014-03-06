@@ -43,7 +43,7 @@ boombot.misc = {};
 boombot.settings = {};
 boombot.moderators = {};
 boombot.filters = {};
-botMethods = {};
+boombot = {};
 boombot.pubVars = {};
  
 toSave = {};
@@ -57,8 +57,8 @@ boombot.misc.ready = true;
 boombot.misc.lockSkipping = false;
 boombot.misc.lockSkipped = "0";
 boombot.misc.tacos = new Array();
-var songBoundary = 60 * 7;
-var announcementTick = 60 * 7;
+var songBoundary = 60 * 10;
+var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 var lobby = "theboombox";
  
@@ -341,10 +341,10 @@ API.sendChat(obj.user.username + " Added this song!");
 }
 
 function djAdvanceEvent(data){
-    setTimeout(function(){ botMethods.data }, 500);
+    setTimeout(function(){ boombot.data }, 500);
 }
 
-botMethods.skip = function(){
+boombot.skip = function(){
     setTimeout(function(){
     API.moderateForceSkip();
     }, 500);
@@ -369,23 +369,23 @@ boombot.hook = function(){
     }, 100);
 };
 
-botMethods.load = function(){
+boombot.load = function(){
     toSave = JSON.parse(localStorage.getItem("boombotSave"));
     boombot.settings = toSave.settings;
     ruleSkip = toSave.ruleSkip;
 };
  
-botMethods.save = function(){localStorage.setItem("boombotSave", JSON.stringify(toSave))};
+boombot.save = function(){localStorage.setItem("boombotSave", JSON.stringify(toSave));};
  
-botMethods.loadStorage = function(){
+boombot.loadStorage = function(){
     if(localStorage.getItem("boombotSave") !== null){
-        botMethods.load();
+        boombot.load();
     }else{
-        botMethods.save();
+        boombot.save();
     }
 };
  
-botMethods.checkHistory = function(){
+boombot.checkHistory = function(){
     currentlyPlaying = API.getMedia(), history = API.getHistory();
     caught = 0;
     for(var i = 0; i < history.length; i++){
@@ -445,7 +445,7 @@ function chatMe(msg)
         API.sendChat(msg);
 }
  
-botMethods.getID = function(username){
+boombot.getID = function(username){
     var users = API.getUsers();
     var result = "";
     for(var i = 0; i < users.length; i++){
@@ -458,11 +458,11 @@ botMethods.getID = function(username){
     return "notFound";
 };
  
-botMethods.cleanString = function(string){
+boombot.cleanString = function(string){
     return string.replace(/&#39;/g, "'").replace(/&amp;/g, "&").replace(/&#34;/g, "\"").replace(/&#59;/g, ";").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 };
  
-botMethods.djAdvanceEvent = function(data){
+boombot.djAdvanceEvent = function(data){
     clearTimeout(boombot.pubVars.skipOnExceed);
     if(boombot.misc.lockSkipping){
         API.moderateAddDJ(boombot.misc.lockSkipped);
@@ -471,7 +471,7 @@ botMethods.djAdvanceEvent = function(data){
         setTimeout(function(){ API.moderateRoomProps(false, true); }, 500);
     }
     var song = API.getMedia();
-    if(botMethods.checkHistory() > 0 && boombot.settings.historyFilter){
+    if(boombot.checkHistory() > 0 && boombot.settings.historyFilter){
         if(API.getUser().permission < 2){
             API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
         }else if(API.getUser().permission > 1){
@@ -485,7 +485,7 @@ botMethods.djAdvanceEvent = function(data){
             API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + boombot.settings.maxLength + " minutes from now because it exceeds the max song length.");
         }else{
             setTimeout(function(){
-                if(botMethods.checkHistory() > 0 && boombot.settings.historyFilter){
+                if(boombot.checkHistory() > 0 && boombot.settings.historyFilter){
                     API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
                     API.moderateForceSkip();
                 };
@@ -989,31 +989,31 @@ botMethods.djAdvanceEvent = function(data){
                     case "historyfilter":
                     case "hf":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1) boombot.settings.historyFilter ? API.sendChat("History filter is enabled") : API.sendChat("History filter is disabled");
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "swearfilter":
                     case "sf":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1) boombot.settings.swearFilter ? API.sendChat("Swearing filter is enabled") : API.sendChat("Swearing filter is disabled");
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "commandfilter":
                     case "cf":
                         if(boombot.admins.indexOf(fromID) > -1) boombot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "racismfilter":
                     case "rf":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1) boombot.settings.racismFilter ? API.sendChat("Racism filter is enabled") : API.sendChat("Racism filter is disabled");
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "beggerfilter":
                     case "bf":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1) boombot.settings.beggerFilter ? API.sendChat("Begger filter is enabled") : API.sendChat("Begger filter is disabled");
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "tsf":
@@ -1026,7 +1026,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat("Bot will now filter swearing.");
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
        
                     case "tcf":
@@ -1039,7 +1039,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat("Bot will now filter commands.");
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "trf":
@@ -1052,7 +1052,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat("Bot will now filter racism.");
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "tbf":
@@ -1065,7 +1065,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat("Bot will now filter fan begging.");
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "thf":
@@ -1078,7 +1078,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat("Bot will now skip songs that are in the room history.");
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
                  
                     case "version":
@@ -1139,7 +1139,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat('New cooldown is '+boombot.settings.cooldown+' seconds');
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "maxlength":
@@ -1158,7 +1158,7 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat('New maxlength is '+boombot.settings.maxLength+' minutes');
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "interactive":
@@ -1178,12 +1178,12 @@ botMethods.djAdvanceEvent = function(data){
                                 API.sendChat("Bot will now interact.");
                             }
                         }
-                        botMethods.save();
+                        boombot.save();
                         break;
  
                     case "save":
                         if(boombot.admins.indexOf(fromID) > -1){
-                            botMethods.save();
+                            boombot.save();
                             API.sendChat("Settings saved.");
                         }else{
                              API.sendChat("This command requires Admins only!");
@@ -1761,7 +1761,7 @@ botMethods.djAdvanceEvent = function(data){
         cancel = false;
     }
     
-    botMethods.loadStorage();
+    boombot.loadStorage();
     console.log("boombot version " + boombot.misc.version);
  
     setTimeout(function(){
