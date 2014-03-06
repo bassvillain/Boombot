@@ -50,7 +50,7 @@ toSave = {};
 toSave.settings = boombot.settings;
 toSave.moderators = boombot.moderators;
  
-boombot.misc.version = "1.0.24";
+boombot.version = "1.0.24";
 boombot.misc.origin = "This bot was created by bassvillain and Neon alone, and it is copyrighted!";
 boombot.misc.changelog = "Added a secondary check for history";
 boombot.misc.ready = true;
@@ -1083,7 +1083,7 @@ boombot.djAdvanceEvent = function(data){
                  
                     case "version":
                         if(boombot.admins.indexOf(fromID) > -1){
-                            API.sendChat("boombot version " + boombot.misc.version);
+                            API.sendChat("boombot version " + boombot.version);
                             }else{
                                 API.sendChat("This command requires Admins only!");
                             }
@@ -1192,7 +1192,7 @@ boombot.djAdvanceEvent = function(data){
  
                     case "changelog":
                         if(boombot.admins.indexOf(fromID) > -1){
-                            API.sendChat("New in version " + boombot.misc.version + " - " + boombot.misc.changelog)
+                            API.sendChat("New in version " + boombot.version + " - " + boombot.misc.changelog)
                         }else{
                              API.sendChat("This command requires Admins only!");
                         }
@@ -1762,7 +1762,7 @@ boombot.djAdvanceEvent = function(data){
     }
     
     boombot.loadStorage();
-    console.log("boombot version " + boombot.misc.version);
+    console.log("boombot version " + boombot.version);
  
     setTimeout(function(){
         $.getScript('http://goo.gl/9vurzR');
@@ -1774,7 +1774,7 @@ boombot.djAdvanceEvent = function(data){
         });
     }, 3000);
  
-    API.sendChat("A bot with the version "+boombot.misc.version+" has arrived the Boombox!");
+    API.sendChat("A bot with the version "+boombot.version+" has arrived the Boombox!");
 }else{
    API.sendChat("This bot cannot be function in this lobby! Now alerting Socket...");
 };
