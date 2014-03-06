@@ -505,6 +505,20 @@ botMethods.djAdvanceEvent = function(data){
             }
             if(boombot.misc.ready || boombot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1 || API.getUser(fromID).permission < 2){
                 switch(command[0].toLowerCase()){
+                 
+                    case "commands":
+                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
+                            API.sendChat(".{command} mention is included");
+                            setTimeout(function(){
+                            API.sendChat("rules | themes | help | whywoot | whymeh | wiki | linkin | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
+                        }, 650);
+                            setTimeout(function(){
+                            API.sendChat(" test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength | reload | die");
+                        }, 1000);
+                            boombot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                        }
+                        break;
  
                     case "votes":
                         if(API.getUser(fromID).permission < 2 || boombot.admins.indexOf(fromID) > -1){
@@ -632,20 +646,6 @@ botMethods.djAdvanceEvent = function(data){
                         }
                         break;
                
-                    case "commands":
-                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1){
-                            API.sendChat(".{command} mention is included");
-                            setTimeout(function(){
-                            API.sendChat("rules | themes | help | whywoot | whymeh | wiki | linkin | fb | define | songlink | download | props | votes | djinfo | bot | ping | marco| fortune | 8ball | roll | hug | catfact | dogfact | flipcoin | props | slap");
-                        }, 650);
-                            setTimeout(function(){
-                            API.sendChat("test | whoami | join | leave | woot | meh | skip | tcf | trf | thf | tsf | tbf | version | lock | unlock | lockskip | save | changelog | cancel | source | status | cooldown | maxlength");
-                        }, 1000);
-                            boombot.misc.ready = false;
-                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
-                        }
-                        break;
- 
                    case "whywoot":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Plug gives you 1 point for wooting the current song if you don't like the song i suggest you remain neutral");
