@@ -310,13 +310,14 @@ boombot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 if(window.location.href === "http://plug.dj/"+lobby+"/"){
+window.setInterval(sendAnnouncement, 1000 * announcementTick);
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.USER_JOIN, UserJoin);
-API.on(API.VOTE_SKIP, SKIP);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.CURATE_UPDATE, curated);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+
 function woot(){
 $('#woot').click();
 }
@@ -326,14 +327,7 @@ var JoinMsg = ["Sup bro! @user","Welcome to The Boombox mate! @user","Sup yo! @u
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username) + " ~ Read the rules and have fun!");
 }
- 
-function SKIP() {
-var SkipMsg = ["Yo man don't play this shitty music again","HaHa! My nigguh got skipped XD","Thank God bruh! Couldn't stand that ugly asz song"];
-API.sendChat(SkipMsg[Math.floor(Math.random() * SkipMsg.length)]);
-}
- 
-window.setInterval(sendAnnouncement, 1000 * announcementTick);
- 
+
 function curated(obj)
 {
 var media = API.getMedia();
@@ -341,32 +335,39 @@ API.sendChat(obj.user.username + " Added this song!");
 }
 
 function djAdvanceEvent(data){
-    setTimeout(function(){ botMethods.data }, 500);
+setTimeout(function(){ botMethods.data }, 500);
 }
 
 botMethods.skip = function(){
-    setTimeout(function(){
-    API.moderateForceSkip();
-    }, 500);
+setTimeout(function(){
+API.moderateForceSkip();
+}, 500);
 };
 
 boombot.unhook = function(){
-    setTimeout(function(){
-    API.off(API.DJ_ADVANCE, djAdvanceEvent);
-    API.off(API.DJ_ADVANCE, woot);
-    API.off(API.USER_JOIN, UserJoin);
-    API.off(API.VOTE_SKIP, SKIP);
-    API.off(API.DJ_ADVANCE, listener);
-    API.off(API.CURATE_UPDATE, curated);
-    API.off(API.DJ_ADVANCE, DJ_ADVANCE);
-    API.off(API.CHAT);
-    }, 100);
+setTimeout(function(){
+API.off(API.DJ_ADVANCE, djAdvanceEvent);
+API.off(API.DJ_ADVANCE, woot);
+API.off(API.USER_JOIN, UserJoin);
+API.off(API.DJ_ADVANCE, listener);
+API.off(API.CURATE_UPDATE, curated);
+API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+API.off(API.CHAT);
+API.off(API.USER_JOIN, function(user)  {bot._userJoin(user);});
+API.off(API.USER_LEAVE, function(user)  {bot._userLeave(user);});
+API.off(API.USER_SKIP, function(user)  {bot._userSkip(user);});
+API.off(API.USER_FAN, function(user)  {bot._userFan(user);});
+API.off(API.CURATE_UPDATE, function(obj)   {bot._userCurate(obj);});
+API.off(API.DJ_ADVANCE, function(obj)   {bot._userAdvance(obj);});
+API.off(API.VOTE_UPDATE, function(obj)   {bot._userVote(obj);});
+API.off(API.CHAT,function(data)  {bot._chat(data);});
+}, 100);
 };
 
 boombot.hook = function(){
-    setTimeout(function(){
-    (function(){$.getScript('http://goo.gl/0it2KW');}());
-    }, 100);
+setTimeout(function(){
+(function(){$.getScript('http://goo.gl/0it2KW');}());
+}, 100);
 };
 
 botMethods.load = function(){
