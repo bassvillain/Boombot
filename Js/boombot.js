@@ -355,7 +355,7 @@ botMethods.skip = function(){
     }, 3500);
 };
 
-Funbot.unhook = function(){
+boombot.unhook = function(){
     setTimeout(function(){
     API.off(API.DJ_ADVANCE, djAdvanceEvent);
     API.off(API.DJ_ADVANCE, woot);
@@ -368,7 +368,7 @@ Funbot.unhook = function(){
     }, 100);
 };
 
-Funbot.hook = function(){
+boombot.hook = function(){
     setTimeout(function(){
     (function(){$.getScript('http://goo.gl/0it2KW');}());
     }, 100);
@@ -890,10 +890,10 @@ botMethods.djAdvanceEvent = function(data){
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1){
                            API.sendChat("Now reloading script...");
                         setTimeout(function(){
-                           Funbot.unhook();
+                           boombot.unhook();
                         }, 150);
                         setTimeout(function(){
-                           Funbot.hook();
+                           boombot.hook();
                         }, 550);
                         }else{
                            API.sendChat("This command requires bouncer +");
@@ -910,7 +910,7 @@ botMethods.djAdvanceEvent = function(data){
                            API.sendChat('Consider me dead');
                         }, 475);
                         setTimeout(function(){
-                           Funbot.unhook();
+                           boombot.unhook();
                         }, 700);
                         }else{
                            API.sendChat("This command requires bouncer +");
