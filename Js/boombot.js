@@ -317,6 +317,9 @@ API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.CURATE_UPDATE, curated);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+$('#playback').hide();
+$('#audience').hide();
+API.setVolume(0);
 
 function woot(){
 $('#woot').click();
@@ -345,7 +348,6 @@ API.moderateForceSkip();
 };
 
 boombot.unhook = function(){
-setTimeout(function(){
 API.off(API.DJ_ADVANCE, djAdvanceEvent);
 API.off(API.DJ_ADVANCE, woot);
 API.off(API.USER_JOIN, UserJoin);
@@ -360,13 +362,16 @@ API.off(API.USER_FAN);
 API.off(API.CURATE_UPDATE);
 API.off(API.DJ_ADVANCE);
 API.off(API.VOTE_UPDATE);
-}, 100);
+$('#playback').show();
+$('#audience').show();
+API.setVolume(15);
 };
 
 boombot.hook = function(){
-setTimeout(function(){
-(function(){$.getScript('http://goo.gl/0it2KW');}());
-}, 100);
+(function(){$.getScript('http://goo.gl/0it2KW');
+$('#playback').hide();
+$('#audience').hide();
+API.setVolume(0);}());
 };
 
 botMethods.load = function(){
