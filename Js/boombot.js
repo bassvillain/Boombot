@@ -92,7 +92,7 @@ boombot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls",
  
 // Random Announcements
 var announcements = 
-["We got the jazz.. we got the jazz.. we're doing a jazz morning session! Let's chill, play your favorite jazzy tracks!"];
+[""];
 
 // Blocked Songs
 var blockedSongs = [
@@ -122,8 +122,7 @@ var blockedArtists = [
     "Lil wayne",
     "Tyga",
     "Madcon",
-    "Eminem"
-];
+    "Eminem"];
 
 // BoomBot fun commands
 boombot.misc.weed = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
