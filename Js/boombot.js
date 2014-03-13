@@ -666,7 +666,7 @@ botMethods.djAdvanceEvent = function(data){
                         break; 
                         
                     case "ass":
-                    case "bootyupvote":
+                    case "wootbooty":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("http://img.pandawhale.com/65262-Upvotes-shooting-out-ass-gif-gtHJ.gif");
                             boombot.misc.ready = false;
@@ -675,7 +675,15 @@ botMethods.djAdvanceEvent = function(data){
                         break;
                         
                     case "boobs":
-                    case "boobsupvote":
+                    case "wootboobs":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("http://img.pandawhale.com/95268-popping-boobs-Imgur-upvote-gif-3RPe.gif");
+                            boombot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                        }
+                        break;
+                    case "popcorn":
+                    case "wootpopcorn":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             API.sendChat("http://img.pandawhale.com/95268-popping-boobs-Imgur-upvote-gif-3RPe.gif");
                             boombot.misc.ready = false;
