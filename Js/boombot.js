@@ -673,6 +673,15 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                    case "boobs":
+                    case "boobsupvote":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("http://img.pandawhale.com/95268-popping-boobs-Imgur-upvote-gif-3RPe.gif");
+                            boombot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                        }
+                        break;
  
                     case "props":
                     case "bonus":
