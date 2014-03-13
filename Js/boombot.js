@@ -663,6 +663,15 @@ botMethods.djAdvanceEvent = function(data){
                             boombot.misc.ready = false;
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
+                        break; 
+                        
+                    case "ass":
+                    case "bootyupvote":
+                        if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            API.sendChat("http://img.pandawhale.com/65262-Upvotes-shooting-out-ass-gif-gtHJ.gif");
+                            boombot.misc.ready = false;
+                            setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
+                        }
                         break;
  
                     case "props":
