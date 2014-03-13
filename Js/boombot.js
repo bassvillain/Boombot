@@ -682,10 +682,11 @@ botMethods.djAdvanceEvent = function(data){
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
                         break;
+                        
                     case "popcorn":
                     case "wootpopcorn":
                         if(API.getUser(fromID).permission > 1 || boombot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
-                            API.sendChat("http://img.pandawhale.com/95268-popping-boobs-Imgur-upvote-gif-3RPe.gif");
+                            API.sendChat("http://img.pandawhale.com/87193-indiana-jones-eating-upvote-gi-TWmZ.gif");
                             boombot.misc.ready = false;
                             setTimeout(function(){ boombot.misc.ready = true; }, boombot.settings.cooldown * 1000);
                         }
