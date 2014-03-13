@@ -71,7 +71,7 @@ boombot.filters.commandWords = new Array();
 boombot.filters.racistWords = new Array();
 boombot.filters.beggerWords = new Array();
  
-boombot.settings.maxLength = 10; //minutes
+boombot.settings.maxLength = 20; //minutes
 boombot.settings.cooldown = 10; //seconds
 boombot.settings.staffMeansAccess = true;
 boombot.settings.historyFilter = true;
