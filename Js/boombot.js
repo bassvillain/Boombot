@@ -1773,6 +1773,9 @@ botMethods.djAdvanceEvent = function(data){
                     case '3':
                         API.sendChat("3) No auto-queue when away from keyboard.");
                         break;
+                    case '4':
+                        API.sendChat("4) Spin mostly english rap.");
+                        break;
                     default:
                         API.sendChat("You faggot that's an Unknown rule!");
                         break;
