@@ -29,7 +29,7 @@
  
 
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
- * @Member:    Ricardo Soares - bassvillain (Owner. of [TheBoomBox](https://github.com/bassvillain/Boombot/edit/master/Js/boombot.js))
+ * @Member:    Ricardo Soares - bassvillain (Owner. of TheBoomBox)
  
  
  * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING ANY PART OF THIS SCRIPT AND USING "IT" or "AS" 
